@@ -1,8 +1,7 @@
 import React from 'react'
 import './Analyzers/ImageAnalyzer'
 import './Styles/AppResults.css'
-import * as nj from 'numpy.js';
-import { useState } from 'react';
+
 
 export const AppResults = (props) => {
 
@@ -77,12 +76,12 @@ export const AppResults = (props) => {
           {/*Results for image two and three*/}
           <h2 className='subtitleResult'>Para la imagen <span className='highlighterYellow'>#2</span> y <span className='highlighterGreen'>#3</span></h2>
           <h3 className="resultDelta">El valor de delta B es igual a: {delta[1]}</h3>
-          <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[0] !== 0 ? T[0].toFixed(3) : T[0]}</h3>
+          <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[1] !== 0 ? T[1].toFixed(3) : T[1]}</h3>
 
           {/*Results for image three and four*/}
           <h2 className='subtitleResult'>Para la imagen <span className='highlighterGreen'>#3</span> y <span className='highlighterBlue'>#4</span></h2>
           <h3 className="resultDelta">El valor de delta B es igual a: {delta[2]}</h3>
-          <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[0] !== 0 ? T[0].toFixed(3) : T[0]}</h3>
+          <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[2] !== 0 ? T[2].toFixed(3) : T[2]}</h3>
 
           <br/>
           <h3 className="resultDelta">La rotación promedio del Sol es de aproximadamente {mean(T)} días.</h3>

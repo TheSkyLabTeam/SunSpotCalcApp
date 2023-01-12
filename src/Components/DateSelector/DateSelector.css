@@ -31,13 +31,23 @@
 
 #dateSender {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 3.8em;
     height: 3.8em;
 
     border: 1px solid var(--brightest-color);
     border-radius: 5px;
     background-color: var(--darkest-color);
+    color: var(--brightest-color);
     margin: 5px;
+    transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
+}
+
+#dateSender:hover {
+    background-color: var(--color-yellow);
+    color: var(--darkest-color);
+    transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
 }
 
 /* Styles for the inputs +*/
@@ -56,14 +66,14 @@ input[type="date"] {
 }
 
 input[type="date"]:hover {
-    background-color: white;
+    background-color: var(--color-red);
     padding: 12px;
     font-weight: bold;
 
     border: 1px solid white;
     border-radius: 5px;
     outline: none;
-    color: var(--darkest-color);
+    color: var(--brightest-color);
     transition: all 300ms;
 }
 

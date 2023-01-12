@@ -29,11 +29,12 @@ body {
   align-items: center;
   position: relative;
   z-index: 6;
+  
 }
 
 #navbar-brand {
   font-family: 'Unbounded', cursive;
-  color: white;
+  color: var(--brightest-color);
   font-weight: 500;
   font-size: 1.2vw;
   margin: 3em 0 0 5em;

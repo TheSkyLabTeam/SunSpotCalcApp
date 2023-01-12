@@ -27,7 +27,7 @@ function App() {
           <p className='navLink'
               data-aos="fade-down" 
               data-aos-duration="800"
-              data-aos-delay="700"><Link to='/'>About</Link></p>
+              data-aos-delay="700"><Link to='/'>Conoce más</Link></p>
         </div>
       </nav>
       

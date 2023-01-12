@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import './DateSelector.css'
+import { SendCheck } from 'react-bootstrap-icons'
 
 export const DateSelector = (props) => {
 
@@ -17,7 +18,7 @@ export const DateSelector = (props) => {
 
       <h1 id="dateTitle">Escoge una fecha: </h1>
       <input type="date" name="globalDate" id="dateSelector" onChange={handleDate}/>
-      <button id="dateSender" onClick={() => props.sendingDate(date)}></button>
+      <button id="dateSender" onClick={() => props.sendingDate(date)}><SendCheck size={22}/></button>
       
     </div>
   )
