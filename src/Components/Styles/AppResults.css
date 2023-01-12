@@ -1,0 +1,48 @@
+:root {
+    --darkest-color: #262626;
+    --brightest-color: #F6F6F6;
+    --color-red: #FF595E;
+    --color-yellow: #FFCA3A;
+    --color-green: #8AC926;
+    --color-blue: #1982C4;
+  
+}
+
+#resultTitle {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#resultParagraph {
+    margin: 2vw 0 2vw 0;
+}
+
+.subtitleResult {
+    color: white;
+    font-weight: 500;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+.resultDelta {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 1vw 0 0 0;
+}
+
+.highlighterRed {
+    color: var(--color-red);
+}
+
+.highlighterYellow {
+    color: var(--color-yellow);
+}
+
+.highlighterGreen {
+    color: var(--color-green);
+}
+
+.highlighterBlue {
+    color: var(--color-blue);
+}

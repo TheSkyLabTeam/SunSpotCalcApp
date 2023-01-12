@@ -1,0 +1,71 @@
+:root {
+    --darkest-color: #262626;
+    --brightest-color: #F6F6F6;
+    --color-red: #FF595E;
+    --color-yellow: #FFCA3A;
+    --color-green: #8AC926;
+    --color-blue: #1982C4;
+  
+}
+
+#instructionComponent {
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+    width: 43.9%;
+    
+}
+
+#numberInstruction {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-right: 0.2em;
+}
+
+#titleInstruction {
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--brightest-color);
+}
+
+#detailInstruction {
+    color: var(--brightest-color);
+    font-weight: 300;
+    font-size: 1.3em;
+    margin: 1em 0 1em 0;
+}
+
+/* Mobile version */
+
+@media (max-width: 540px) {
+
+    #instructionComponent {
+        display: flex;
+        flex-direction: row;
+        margin: 1em 0 1em 0;
+        width: 100%;
+    }
+
+    #numberInstruction {
+        font-size: 2em;
+        font-weight: 800;
+        margin-right: 0.2em;
+    }
+
+    #deInstructionContainer {
+        width: 80%;
+    }
+
+    #titleInstruction {
+        font-weight: 600;
+        font-size: 0.8em;
+        color: var(--brightest-color);
+    }
+
+    #detailInstruction {
+        color: var(--brightest-color);
+        font-weight: 300;
+        font-size: 0.8em;
+        margin: 1em 0 1em 0;
+    }
+}
