@@ -143,19 +143,38 @@ export const ImageAnalyzer = (props) => {
     let rho2 = Math.radians(Math.degrees(Math.asin(Rm/R))-Math.radians(d)*(Rm/R))
     let B2 = Math.degrees(Math.asin(Math.cos(rho2)*Math.sin(Math.radians(B0))+Math.sin(rho2)*Math.cos(Math.radians(B0))*Math.cos(Math.radians(P-Pm))));
     let L2 = L0+Math.degrees(Math.asin(Math.sin(Math.radians(P-Pm))*Math.sin(rho2)*Math.cos(Math.radians(B2))));
+
+    // Funciones para los estilos
+    const [visibility, setVisibility] = useState(false);
     
     return (
         <div className='ImageAnalizer' id='AnalizerOne'>
-            <div id="display-image" ref={ref} style={ newDate > refDate?
+            <div id="display-image" 
+            onClick={() => {
+                props.sendingB(B1);
+                setVisibility(true)
+            }} 
+            ref={ref} 
+            style={ 
+                newDate > refDate?
                 {backgroundImage: `url(${errorBackground})`}
-                :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}}>
+                :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}
+
+
+            }>
+                    <div className="sendedAlert" id="sendedRed" 
+                    style={
+                        visibility === true
+                        ? {display: `flex`}
+                        : {display: `none`}
+        
+                    }>Coordenadas enviadas</div>
 
             </div>
             <div className="detailsContainer">
                 <h4 id="detailsTitle">Selecciona una mancha</h4>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)}</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)}</h5>
-                <button className='sender' onClick={() => props.sendingB(B1)}>Listo</button>
             </div>
         </div>  
     )

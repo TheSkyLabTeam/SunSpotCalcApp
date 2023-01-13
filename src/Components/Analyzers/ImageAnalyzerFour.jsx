@@ -146,13 +146,31 @@ export const ImageAnalyzerFour = (props) => {
     let B2 = Math.degrees(Math.asin(Math.cos(rho2)*Math.sin(Math.radians(B0))+Math.sin(rho2)*Math.cos(Math.radians(B0))*Math.cos(Math.radians(P-Pm))));
     let L2 = L0+Math.degrees(Math.asin(Math.sin(Math.radians(P-Pm))*Math.sin(rho2)*Math.cos(Math.radians(B2))));
 
-    const [Bone, setBone] = useState()
+    // Funciones para los estilos
+    const [visibility, setVisibility] = useState(false);
     
     return (
         <div className='ImageAnalizer'>
-            <div id="display-image" ref={ref} style={ newDate > refDate?
+            <div id="display-image" 
+            onClick={() => {
+                props.sendingB(B1);
+                setVisibility(true)
+            }} 
+            ref={ref} 
+            style={ 
+                newDate > refDate?
                 {backgroundImage: `url(${errorBackground})`}
-                :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}}>
+                :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}
+
+
+            }>
+                    <div className="sendedAlert" id="sendedBlue" 
+                    style={
+                        visibility === true
+                        ? {display: `flex`}
+                        : {display: `none`}
+        
+                    }>Coordenadas enviadas</div>
 
             </div>
             <div className="detailsContainer" id='AnalizerFour'>
