@@ -32,7 +32,7 @@ function App() {
       </nav>
       
       <Routes>
-        <Route path='/App' element={<SunApp />} />
+        <Route path='/SunSpotCalcApp/App' element={<SunApp />} />
         <Route path='/SunSpotCalcApp' element={<LandingPage />} />
       </Routes>
     </div>
