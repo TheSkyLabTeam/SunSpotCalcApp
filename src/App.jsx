@@ -23,7 +23,7 @@ function App() {
           <p className='navLink'
               data-aos="fade-down" 
               data-aos-duration="800"
-              data-aos-delay="600"><Link to='/'>App</Link></p>
+              data-aos-delay="600"><Link to='/App'>App</Link></p>
           <p className='navLink'
               data-aos="fade-down" 
               data-aos-duration="800"
@@ -32,7 +32,7 @@ function App() {
       </nav>
       
       <Routes>
-        <Route path='/' element={<SunApp />} />
+        <Route path='/App' element={<SunApp />} />
         <Route path='/SunSpotCalcApp' element={<LandingPage />} />
       </Routes>
     </div>
