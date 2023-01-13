@@ -28,7 +28,7 @@
 }
 
 #SunHeaderImageContainer {
-    background-image: url(./src/assets/Imgs/NASA_SunPhoto.png);
+    background-image: url(./Imgs/NASA_SunPhoto.png);
     background-size: cover;
     position: absolute;
     top: 0;
