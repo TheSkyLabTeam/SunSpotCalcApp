@@ -18,22 +18,22 @@ function App() {
               data-aos="fade-down" 
               data-aos-duration="800"
               data-aos-delay="500">
-                <Link to='/'>Home</Link>
+                <Link to='/SunSpotCalcApp'>Home</Link>
           </p>
           <p className='navLink'
               data-aos="fade-down" 
               data-aos-duration="800"
-              data-aos-delay="600"><Link to='/SunSpotCalcApp'>App</Link></p>
+              data-aos-delay="600"><Link to='/App'>App</Link></p>
           <p className='navLink'
               data-aos="fade-down" 
               data-aos-duration="800"
-              data-aos-delay="700"><Link to='/'>Conoce más</Link></p>
+              data-aos-delay="700"><Link to='/SunSpotCalcApp'>Conoce más</Link></p>
         </div>
       </nav>
       
       <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/SunSpotCalcApp' element={<SunApp />} />
+        <Route path='/App' element={<SunApp />} />
+        <Route path='/SunSpotCalcApp' element={<LandingPage />} />
       </Routes>
     </div>
   )
