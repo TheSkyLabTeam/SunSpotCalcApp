@@ -1,6 +1,5 @@
 {
   "name": "sunspotcalcapp",
-  "homepage": "https://theskylabteam.github.io/SunSpotCalcApp/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,8 +14,6 @@
     "@tensorflow/tfjs": "^4.2.0",
     "aos": "^2.3.4",
     "global": "^4.4.0",
-    "numjs": "^0.16.1",
-    "numpy.js": "^0.5.0",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "^18.2.0",
