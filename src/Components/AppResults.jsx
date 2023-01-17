@@ -70,21 +70,21 @@ export const AppResults = (props) => {
         <div id="resultParagraph">
           {/*Results for image one and two*/}
           <h2 className='subtitleResult'>Para la imagen <span className='highlighterRed'>#1</span> y <span className='highlighterYellow'>#2</span></h2>
-          <h3 className="resultDelta">El valor de delta B es igual a: {delta[0]}</h3>
+          <h3 className="resultDelta">El valor de ΔB <span className='highlighterRed'>(Cambio de latitud heliográfica de la macha)</span> es igual a: {delta[0].toFixed(3)}</h3>
           <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[0] !== 0 ? T[0].toFixed(3) : T[0]}</h3>
 
           {/*Results for image two and three*/}
           <h2 className='subtitleResult'>Para la imagen <span className='highlighterYellow'>#2</span> y <span className='highlighterGreen'>#3</span></h2>
-          <h3 className="resultDelta">El valor de delta B es igual a: {delta[1]}</h3>
+          <h3 className="resultDelta">El valor de ΔB <span className='highlighterYellow'>(Cambio de latitud heliográfica de la macha)</span> es igual a: {delta[1].toFixed(3)}</h3>
           <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[1] !== 0 ? T[1].toFixed(3) : T[1]}</h3>
 
           {/*Results for image three and four*/}
           <h2 className='subtitleResult'>Para la imagen <span className='highlighterGreen'>#3</span> y <span className='highlighterBlue'>#4</span></h2>
-          <h3 className="resultDelta">El valor de delta B es igual a: {delta[2]}</h3>
+          <h3 className="resultDelta">El valor de ΔB <span className='highlighterGreen'>(Cambio de latitud heliográfica de la macha)</span> es igual a: {delta[2].toFixed(3)}</h3>
           <h3 className="resultDelta">Y la rotacion del sol es de aproximadamente: {T[2] !== 0 ? T[2].toFixed(3) : T[2]}</h3>
 
           <br/>
-          <h3 className="resultDelta">La rotación promedio del Sol es de aproximadamente {mean(T)} días.</h3>
+          <h3 className="resultDelta">La rotación promedio del Sol es de aproximadamente {mean(T).toFixed(3)} días.</h3>
         </div>
     </>
   )

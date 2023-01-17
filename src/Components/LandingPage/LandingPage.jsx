@@ -1,5 +1,6 @@
 import React from 'react'
 import { InstructionComponent } from './Instructions/InstructionComponent'
+import {Route, Routes, Link } from 'react-router-dom'
 import './LandingPage.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -41,7 +42,7 @@ const LandingPage = () => {
         <div id="gridCallToAction">
           <div className="rowCall" id='textCallToAction'>
             <h6 className="sectionSubtitle" id='callToActionDescription'>Descubre porque SunSpotCalc es la mejor aplicación para calcular la rotación del sol.</h6>
-            <button className='sectionButton' id='callToActionButton'>Usa SunSpotCalc</button>
+            <button className='sectionButton' id='callToActionButton'><Link to='/App'>Home</Link></button>
           </div>
           <div className="rowCall" id='imageCallToAction'></div>
         </div>
