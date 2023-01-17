@@ -18,7 +18,7 @@ function App() {
               data-aos="fade-down" 
               data-aos-duration="800"
               data-aos-delay="500">
-                <Link to='/sunspotcalc'>Home</Link>
+                <Link to='/'>Home</Link>
           </p>
           <p className='navLink'
               data-aos="fade-down" 
@@ -33,7 +33,7 @@ function App() {
       
       <Routes>
         <Route path='/App' element={<SunApp />} />
-        <Route path='/sunspotcalc' element={<LandingPage />} />
+        <Route path='/' element={<LandingPage />} />
       </Routes>
     </div>
   )
