@@ -75,6 +75,9 @@ const SunApp = () => {
             ¡¡Te invitamos a usar la app desde tu PC o laptop, esperamos que te guste!!
           </p>
         </div>
+        <div id="transitionApp">
+          <h1>Bienvenido</h1>
+        </div>
         <div className="mainApp">
           <DateSelector sendingDate={globalDate => setglobalDate(globalDate)}/>
           <AppNavbar />
