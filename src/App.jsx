@@ -1,6 +1,6 @@
 import './App.css'
 import LandingPage from './Components/LandingPage/LandingPage'
-import { Route, Routes, Link } from 'react-router-dom'
+import {Route, Routes, Link } from 'react-router-dom'
 import SunApp from './Components/SunApp'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
