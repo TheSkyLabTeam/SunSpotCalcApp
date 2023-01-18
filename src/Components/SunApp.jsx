@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react'
 import './Styles/SunApp.css'
+import 'aos/dist/aos.css';
 
 import { ImageAnalyzerTwo } from './Analyzers/ImageAnalyzerTwo'
 import { ImageAnalyzerThree } from './Analyzers/ImageAnalyzerThree'
@@ -75,16 +76,13 @@ const SunApp = () => {
             ¡¡Te invitamos a usar la app desde tu PC o laptop, esperamos que te guste!!
           </p>
         </div>
-        <div id="transitionApp">
-          <h1>Bienvenido</h1>
-        </div>
         <div className="mainApp">
           <DateSelector sendingDate={globalDate => setglobalDate(globalDate)}/>
           <AppNavbar />
           <div className="principal-container">
             <div className="display-image">
-              <h1 className="refnumber" id='refOne'>0<span id='HighOne'>1</span></h1>
-              <ImageAnalyzer date={dateForOne} sendingB={BOne => setBOne(BOne)}/>
+              <h1 className="refnumber" id='refOne' data-aos="fade-left" data-aos-delay="200">0<span id='HighOne'>1</span></h1>
+              <ImageAnalyzer date={dateForOne} sendingB={BOne => setBOne(BOne)} />
               
             </div>
           </div>

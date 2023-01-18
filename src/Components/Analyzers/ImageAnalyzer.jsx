@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Analyzers/ImageAnalyzer'
 import errorBackground from './ErrorImagesForAnalyzers/NoEncontradaRojo.jpg'
+import 'aos/dist/aos.css';
 
 export const ImageAnalyzer = (props) => {
 
@@ -148,7 +149,7 @@ export const ImageAnalyzer = (props) => {
     const [visibility, setVisibility] = useState(false);
     
     return (
-        <div className='ImageAnalizer' id='AnalizerOne'>
+        <div className='ImageAnalizer' id='AnalizerOne' data-aos="fade-right" data-aos-delay="500">
             <div id="display-image" 
             onClick={() => {
                 props.sendingB(B1);
