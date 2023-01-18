@@ -17,7 +17,7 @@ export const ImageAnalyzerFour = (props) => {
     let xOne = 0;
     let yOne = 0;
 
-    let R = 256;
+    let R = 221;
 
 
     xOne = posX;
