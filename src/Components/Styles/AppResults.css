@@ -8,21 +8,88 @@
   
 }
 
+
 #resultTitle {
     font-size: 3em;
     font-weight: 600;
 }
 
-#resultParagraph {
-    margin: 2vw 0 2vw 0;
+
+/* Styles fo the result container */
+
+
+.resultsContainer {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.subtitleResult {
-    color: white;
-    font-weight: 500;
-    margin-top: 2em;
-    font-size: 1.5em;
+
+.resultCol {
+    width: 80vw;
+    height: 48%;
+    margin-top: 1em;
 }
+
+
+#colResult1 {
+    border: 2px solid var(--color-green);
+    border-bottom: 10px solid var(--color-green);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#colResult2 {
+    background-color: #FFCA3A;
+}
+
+/* Styles for the days results*/
+
+#ContainerDayTitleResult {
+    width: 60%;
+}
+
+.titleResult {
+    color: var(--brightest-color);
+    font-size: 1.25em;
+    margin: 1em;
+}
+
+#ContainerDayDetailResult {
+
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#dayIntResult {
+    color: var(--brightest-color);
+    font-size: 10em;
+    font-weight: bold;
+    margin: -1.5vw 3vw 0 3vw;
+}
+
+
+#dayFloatResult {
+    color: var(--brightest-color);
+    font-size: 3em;
+    margin: -2vw 3vw 0 3vw;
+}
+
+
+#textDays {
+    font-size: 2em;
+    color: var(--color-green);
+}
+
 
 .resultDelta {
     color: white;
