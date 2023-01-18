@@ -58,7 +58,6 @@ body {
     
     width: 512px;
     height: 512px;
-    outline: 2px solid var(--brightest-color);
 
     border-radius: 10px;
     background-size: cover;
@@ -110,6 +109,22 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.analizerRed {
+    outline: 2px solid var(--color-red);
+}
+
+.analizerYellow {
+    outline: 2px solid var(--color-yellow);
+}
+
+.analizerGreen {
+    outline: 2px solid var(--color-green);
+}
+
+.analizerBlue {
+    outline: 2px solid var(--color-blue);
 }
 
 /* Styles for the details */

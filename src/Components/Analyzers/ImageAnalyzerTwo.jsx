@@ -153,7 +153,8 @@ export const ImageAnalyzerTwo = (props) => {
     
     return (
         <div className='ImageAnalizer' id='AnalizerTwo'>
-            <div id="display-image" 
+            <div id="display-image"
+            className='analizerYellow' 
             onClick={() => {
                 props.sendingB(B1);
                 setVisibility(true)

@@ -150,7 +150,8 @@ export const ImageAnalyzer = (props) => {
     
     return (
         <div className='ImageAnalizer' id='AnalizerOne' data-aos="fade-right" data-aos-delay="500">
-            <div id="display-image" 
+            <div id="display-image"
+            className='analizerRed' 
             onClick={() => {
                 props.sendingB(B1);
                 setVisibility(true)
