@@ -178,8 +178,8 @@ export const ImageAnalyzerTwo = (props) => {
             </div>
             <div className="detailsContainer">
                 <h4 id="detailsTitle">Selecciona una mancha </h4>
-                <h5 className="coordinate-details">Coor X: {posX.toFixed(2)}</h5>
-                <h5 className="coordinate-details">Coor Y: {posY.toFixed(2)}</h5>
+                <h5 className="coordinate-details">Coor X: {posX.toFixed(2)} px.</h5>
+                <h5 className="coordinate-details">Coor Y: {posY.toFixed(2)} px.</h5>
             </div>
         </div>  
     )
