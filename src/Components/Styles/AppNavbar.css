@@ -77,3 +77,25 @@
 #linkFive:hover {
     background-color: #6A4C93;
 }
+
+@media (max-width: 1000px) {
+    #AppNavbar {
+
+        background-color: rgba(246, 246, 246, 0.1);
+        backdrop-filter: blur(3px);
+    
+        position: absolute;
+        position: sticky;
+        position: -webkit-sticky; /* Safari */
+        top: 90vh;
+        left: 30vw;
+        z-index: 6;
+    
+        width: 40vw;
+        height: 5vh;
+        display: flex;
+    
+        border-radius: 5px;
+        
+    }
+}

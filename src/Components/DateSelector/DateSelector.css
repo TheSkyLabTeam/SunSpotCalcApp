@@ -86,4 +86,10 @@ input[type="date"]:hover {
 
 /* Just decoration Stuff */
 
-
+@media (max-width: 1000px) {
+    #dateTitle {
+        color: var(--brightest-color);
+        font-size: 3.5vw;
+        margin-right: 2vw;
+    }
+}

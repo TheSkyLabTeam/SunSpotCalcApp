@@ -116,3 +116,58 @@
 .highlighterBlue {
     color: var(--color-blue);
 }
+
+@media (max-width: 1000px) {
+
+    #colResult2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resultCol {
+        width: 80vw;
+        height: 40vh;
+        margin-top: 1em;
+    }
+
+    /* Styles for the days results*/
+
+    #colResult1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ContainerDayTitleResult {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .titleResult {
+        color: var(--brightest-color);
+        font-size: 4vw;
+    
+    }
+
+    #dayIntResult {
+        color: var(--brightest-color);
+        font-size: 20vw;
+        font-weight: bold;
+        margin: -1.5vw 3vw 0 3vw;
+    }
+    
+    
+    #dayFloatResult {
+        color: var(--brightest-color);
+        font-size: 6vw;
+        margin: -4vw 3vw 0 3vw;
+    }
+    
+    
+    #textDays {
+        font-size: 2em;
+        color: var(--color-green);
+    }
+}
