@@ -48,8 +48,9 @@ body {
 }
 
 .ImageAnalizer {
-    padding: 0em 2em 2em 0;
+    padding: 0em 0vw 0vw 0;
     display: flex;
+    flex-direction: row;
 }
 
 /* Styles for the display of the image */
