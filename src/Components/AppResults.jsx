@@ -1,5 +1,6 @@
 import React from 'react'
 import './Analyzers/ImageAnalyzer'
+import { DetailResult } from './DetailResult/DetailResult'
 import './Styles/AppResults.css'
 
 
@@ -81,7 +82,11 @@ export const AppResults = (props) => {
               <h4 id="textDays">Días</h4>
             </div>
           </div>
-          <div className="resultCol" id='colResult2'></div>
+          <div className="resultCol" id='colResult2'>
+            <DetailResult num="1" delta={delta} T={T} />
+            <DetailResult num="2" delta={delta} T={T} />
+            <DetailResult num="3" delta={delta} T={T} />
+          </div>
 
         </div>
     </>

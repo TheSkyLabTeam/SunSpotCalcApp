@@ -1,0 +1,34 @@
+:root {
+    --darkest-color: #262626;
+    --brightest-color: #F6F6F6;
+    --color-red: #FF595E;
+    --color-yellow: #FFCA3A;
+    --color-green: #8AC926;
+    --color-blue: #1982C4;
+  
+}
+
+#DetailResult {
+    width: 32%;
+    height: 30vh;
+    margin: 0 1em 0 0;
+    border: 4px solid white;
+    border-radius: 10px;
+}
+
+.refImageTitle {
+    font-size: 1.8vw;
+    font-weight: bold;
+    width: 20vw;
+    margin: 2vw 1vw 1vw 1.5vw;
+}
+
+.detailParagraph {
+    margin: 1vw 0 1vw 1.5vw;
+}
+
+.textDetail {
+    color: var(--brightest-color);
+    font-weight: normal;
+    margin-bottom: 1vw;
+}
