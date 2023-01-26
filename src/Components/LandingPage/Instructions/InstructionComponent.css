@@ -35,6 +35,41 @@
     margin: 1em 0 1em 0;
 }
 
+/* Tablet version */
+
+@media (max-width: 900px) {
+
+    #instructionComponent {
+        display: flex;
+        flex-direction: row;
+        margin: 1em 0 1em 0;
+        width: 100%;
+    }
+
+    #numberInstruction {
+        font-size: 3em;
+        font-weight: 800;
+        margin-right: 0.2em;
+    }
+
+    #deInstructionContainer {
+        width: 80%;
+    }
+
+    #titleInstruction {
+        font-weight: 600;
+        font-size: 1.2em;
+        color: var(--brightest-color);
+    }
+
+    #detailInstruction {
+        color: var(--brightest-color);
+        font-weight: 300;
+        font-size: 1.1em;
+        margin: 1em 0 1em 0;
+    }
+}
+
 /* Mobile version */
 
 @media (max-width: 540px) {
