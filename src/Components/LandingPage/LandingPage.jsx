@@ -42,7 +42,7 @@ const LandingPage = () => {
         <div id="gridCallToAction">
           <div className="rowCall" id='textCallToAction'>
             <h6 className="sectionSubtitle" id='callToActionDescription'>Descubre porque SunSpotCalc es la mejor aplicación para calcular la rotación del sol.</h6>
-            <button className='sectionButton' id='callToActionButton'><Link to='/App'>Home</Link></button>
+            <button className='sectionButton' id='callToActionButton'><Link to='/App'>SunSpotCalc</Link></button>
           </div>
           <div className="rowCall" id='imageCallToAction'></div>
         </div>
