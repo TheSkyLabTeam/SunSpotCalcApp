@@ -1,0 +1,84 @@
+:root {
+    --darkest-color: #262626;
+    --brightest-color: #F6F6F6;
+    --color-red: #FF595E;
+    --color-yellow: #FFCA3A;
+    --color-green: #8AC926;
+    --color-blue: #1982C4;
+  
+}
+
+#aboutPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    padding-top: 16vh;
+}
+
+.aboutTitle {
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+#conoceTitle {
+    color: var(--color-red);
+}
+
+#teamTitle {
+    padding-top: 8vh;
+    color: var(--color-yellow);
+}
+
+.aboutParagraf {
+    margin-top: 2vh;
+    max-width: 60vw;
+    font-size: 1.2vw;
+    font-weight: 300;
+    color: var(--brightest-color);
+}
+
+#teamParagraf {
+    width: 100%;
+}
+
+#loveParagraf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    
+    position: absolute;
+    bottom: 0;
+
+    width: 100vw;
+    animation: changeText infinite 5s alternate;
+
+    transition: all 300ms;
+    
+
+}
+
+@keyframes changeText {
+    0% {
+        color: var(--color-red);
+    }
+
+    25% {
+        color: var(--color-yellow);
+    }
+
+    50% {
+        color: #8AC926;
+    }
+
+    75% {
+        color: #1982C4;
+    }
+
+    100% {
+        color: #F6F6F6;
+    }
+}
