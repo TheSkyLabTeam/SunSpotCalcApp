@@ -5,11 +5,12 @@ import 'aos/dist/aos.css';
 
 export const ImageAnalyzer = (props) => {
 
-    const [date, setDate] = useState();
+    const [R, setR] = useState(221);
+    const [coorParameter, setCoorParameter] = useState(255);
     const [posX, setposX] = useState(0);
     const [posY, setposY] = useState(0);
 
-    //Reference date
+    // Reference date 
 
     let refDate = new Date();
 
@@ -18,12 +19,23 @@ export const ImageAnalyzer = (props) => {
     let xOne = 0;
     let yOne = 0;
 
-    let R = 221;
-
-
     xOne = posX;
     yOne = posY;
-    
+
+    useEffect(() => {
+        const screen = window.innerWidth;
+      
+        if (screen <= 512) {
+          setR(180);
+          setCoorParameter(150);
+        }
+      
+        if (screen > 512) {
+          setR(221);
+          setCoorParameter(255);
+        }
+      }, []);
+        
     // Function to get the coordinates of the x and y axis
 
     const ref = useRef(null);
@@ -32,14 +44,15 @@ export const ImageAnalyzer = (props) => {
     useEffect(() => {
 
         const getcordd = (e) => {
+            e.preventDefault()
           
             let bnds = e.target.getBoundingClientRect();
-            let posX = e.clientX - bnds.left - 256;
-            let posY = bnds.top - e.clientY + 256;
+            let posX = e.clientX - bnds.left - coorParameter;
+            let posY = bnds.top - e.clientY + coorParameter;
             
 
             setposX(posX);
-            setposY(posY);
+            setposY(posY)
           
           };
 

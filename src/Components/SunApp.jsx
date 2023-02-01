@@ -19,8 +19,7 @@ const SunApp = () => {
 
   const [globalDate, setglobalDate] = useState(0);
   console.log(globalDate);
-
-
+  
   // Function for add days 
 
   const addDays = (str, num) => {
