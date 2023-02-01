@@ -27,7 +27,7 @@ export const ImageAnalyzer = (props) => {
       
         if (screen <= 512) {
           setR(180);
-          setCoorParameter(150);
+          setCoorParameter(60);
         }
       
         if (screen > 512) {
