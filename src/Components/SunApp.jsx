@@ -67,15 +67,6 @@ const SunApp = () => {
 
   return (
     <>
-        <div id="oopsAdvice">
-          <h1 id='opsTitle'>Oops...</h1>
-          <p id='opsPara'>
-            Estamos trabajando para que pronto puedas usar SunSpotCalc en tu dispositivo móvil.
-            <br/>
-            <br/>
-            ¡¡Te invitamos a usar la app desde tu PC o laptop, esperamos que te guste!!
-          </p>
-        </div>
         <div className="mainApp">
           <DateSelector sendingDate={globalDate => setglobalDate(globalDate)}/>
           <AppNavbar />

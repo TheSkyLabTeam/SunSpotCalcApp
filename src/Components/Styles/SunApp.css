@@ -12,34 +12,6 @@ body {
     width: 100%;
 }
 
-#oopsAdvice {
-    display: none;
-
-}
-
-@keyframes changingColor {
-    0% {
-        background-color: #FF595E;
-    }
-
-    25% {
-        background-color: #FFCA3A;
-    }
-
-    50% {
-        background-color: #8AC926;
-    }
-
-    75% {
-        background-color: #1982C4;
-    }
-
-    100% {
-        display: none;
-
-    }
-}
-
 .principal-container {
     height: 100vh;
     background-color: var(--darkest-color);
