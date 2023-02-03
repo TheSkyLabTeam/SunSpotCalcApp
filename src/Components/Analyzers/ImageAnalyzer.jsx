@@ -23,7 +23,6 @@ export const ImageAnalyzer = (props) => {
     yOne = posY;
 
     useEffect(() => {
-        const screen = window.innerWidth;
       
         if (screen <= 512) {
           setR(180);
