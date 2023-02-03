@@ -24,12 +24,12 @@ export const ImageAnalyzer = (props) => {
 
     useEffect(() => {
       
-        if (screen <= 512) {
+        if ( window.screen.width < 512) {
           setR(180);
-          setCoorParameter(60);
+          setCoorParameter(58);
         }
       
-        if (screen > 512) {
+        if (window.screen.width > 512) {
           setR(221);
           setCoorParameter(255);
         }
@@ -51,7 +51,7 @@ export const ImageAnalyzer = (props) => {
             
 
             setposX(posX);
-            setposY(posY)
+            setposY(posY);
           
           };
 

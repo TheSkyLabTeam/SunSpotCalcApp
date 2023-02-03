@@ -17,21 +17,21 @@
 }
 
 #numberInstruction {
-    font-size: 2.5em;
+    font-size: 2.5vw;
     font-weight: 800;
     margin-right: 0.2em;
 }
 
 #titleInstruction {
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.3vw;
     color: var(--brightest-color);
 }
 
 #detailInstruction {
     color: var(--brightest-color);
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1.3vw;
     margin: 1em 0 1em 0;
 }
 

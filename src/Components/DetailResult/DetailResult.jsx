@@ -37,14 +37,14 @@ export const DetailResult = (props) => {
     <div id="DetailResult"
         style={
             refNum == 1 ?
-            {border: `4px solid #FF595E`,
-             borderBottom: `12px solid #FF595E`} :
+            {border: `2px solid #FF595E`,
+             borderBottom: `5px solid #FF595E`} :
             refNum == 2 ?
-            {border: `4px solid #FFCA3A`,
-             borderBottom: `12px solid #FFCA3A`} :
+            {border: `2px solid #FFCA3A`,
+             borderBottom: `5px solid #FFCA3A`} :
             refNum == 3 ?
-            {border: `4px solid #1982C4`,
-             borderBottom: `12px solid #1982C4`} :
+            {border: `2px solid #1982C4`,
+             borderBottom: `5px solid #1982C4`} :
              {border: `0px`}
             
         }>
