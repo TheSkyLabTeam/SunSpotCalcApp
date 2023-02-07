@@ -253,6 +253,13 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 600px){
 
+    .principal-container {
+        height: 70vh;
+        background-color: var(--darkest-color);
+        padding-left: 8vw;
+    
+    }
+
     /* Styles for the display of the image */
 
     #display-image {

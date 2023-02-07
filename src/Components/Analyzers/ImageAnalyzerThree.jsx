@@ -25,7 +25,7 @@ export const ImageAnalyzerThree = (props) => {
         let screenWith = screen.availWidth;
       
         if (screenWith <= 512) {
-          R = 150;
+          R = 129.5;
           coorParameter = 150;
         }
       
