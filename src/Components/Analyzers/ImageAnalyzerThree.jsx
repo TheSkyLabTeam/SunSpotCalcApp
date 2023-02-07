@@ -4,11 +4,10 @@ import errorBackground from './ErrorImagesForAnalyzers/NoEncontradaVerde.jpg'
 
 export const ImageAnalyzerThree = (props) => {
 
-    const [date, setDate] = useState();
     const [posX, setposX] = useState(0);
     const [posY, setposY] = useState(0);
 
-    //Reference Date
+    // Reference date 
 
     let refDate = new Date();
 
@@ -16,13 +15,26 @@ export const ImageAnalyzerThree = (props) => {
 
     let xOne = 0;
     let yOne = 0;
-
-    let R = 221;
-
+    let coorParameter = 256
+    let R = 221
 
     xOne = posX;
     yOne = posY;
-    
+
+    useEffect(() => {
+        let screenWith = screen.availWidth;
+      
+        if (screenWith <= 512) {
+          R = 150;
+          coorParameter = 150;
+        }
+      
+        if (screenWith >= 512) {
+          R = 221;
+          coorParameter = 256;
+        }
+      }, [screen]);
+        
     // Function to get the coordinates of the x and y axis
 
     const ref = useRef(null);
@@ -34,12 +46,12 @@ export const ImageAnalyzerThree = (props) => {
             e.preventDefault()
           
             let bnds = e.target.getBoundingClientRect();
-            let posX = e.clientX - bnds.left - 256;
-            let posY = bnds.top - e.clientY + 256;
+            let posX = e.clientX - bnds.left - coorParameter;
+            let posY = bnds.top - e.clientY + coorParameter;
             
 
             setposX(posX);
-            setposY(posY)
+            setposY(posY);
           
           };
 

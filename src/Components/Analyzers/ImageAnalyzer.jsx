@@ -5,8 +5,6 @@ import 'aos/dist/aos.css';
 
 export const ImageAnalyzer = (props) => {
 
-    const [R, setR] = useState(221);
-    const [coorParameter, setCoorParameter] = useState(255);
     const [posX, setposX] = useState(0);
     const [posY, setposY] = useState(0);
 
@@ -18,22 +16,25 @@ export const ImageAnalyzer = (props) => {
 
     let xOne = 0;
     let yOne = 0;
+    let coorParameter = 256
+    let R = 221
 
     xOne = posX;
     yOne = posY;
 
     useEffect(() => {
+        let screenWith = screen.availWidth;
       
-        if ( window.screen.width < 512) {
-          setR(180);
-          setCoorParameter(58);
+        if (screenWith <= 512) {
+          R = 150;
+          coorParameter = 150;
         }
       
-        if (window.screen.width > 512) {
-          setR(221);
-          setCoorParameter(255);
+        if (screenWith >= 512) {
+          R = 221;
+          coorParameter = 256;
         }
-      }, []);
+      }, [screen]);
         
     // Function to get the coordinates of the x and y axis
 
