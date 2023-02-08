@@ -1,3 +1,4 @@
+import { log } from '@tensorflow/tfjs';
 import React, { useEffect, useRef, useState } from 'react'
 import '../Analyzers/ImageAnalyzer'
 import errorBackground from './ErrorImagesForAnalyzers/NoEncontradaVerde.jpg'
