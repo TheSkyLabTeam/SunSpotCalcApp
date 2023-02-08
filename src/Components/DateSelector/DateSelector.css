@@ -93,3 +93,17 @@ input[type="date"]:hover {
         margin-right: 2vw;
     }
 }
+
+
+@media (max-width: 600px) {
+    #dateSelector {
+        width: 6vw;
+    }
+
+    #dateTitle {
+        color: var(--brightest-color);
+        margin-right: 3.5vw;
+    }
+
+}
+
