@@ -40,6 +40,10 @@ body {
   margin: 3em 0 0 5em;
 }
 
+#sunsLogo {
+  width: 4vw;
+}
+
 
 #navbar-links {
   display: flex;
@@ -105,6 +109,10 @@ body {
     font-weight: 500;
     font-size: 3.5vw;
     margin: 2em 0 0 1.5em;
+  }
+
+  #sunsLogo {
+    width: 8vw;
   }
 
 

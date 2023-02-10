@@ -2,6 +2,7 @@ import './App.css'
 import LandingPage from './Components/LandingPage/LandingPage'
 import { AboutPage } from './Components/AboutPage/AboutPage'
 import {Route, Routes, Link } from 'react-router-dom'
+import SunsLogo from './assets/sunspotcalclogo.svg'
 import SunApp from './Components/SunApp'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       
       <nav id='navbar'>
-        <h5 id="navbar-brand" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">SunSpotCalc</h5>
+        <h5 id="navbar-brand" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300"><img id='sunsLogo' src={SunsLogo} alt="mainLogo" /></h5>
         <div id="navbar-links">
           <p className='navLink' 
               data-aos="fade-down" 

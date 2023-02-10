@@ -6,7 +6,7 @@ export const AboutPage = () => {
     <div id='aboutPage'>
         <h1 className='aboutTitle' id='conoceTitle'>Conoce más</h1>
         <p className='aboutParagraf'>Esta aplicación ha sido diseñada y optimizada por un equipo de curiosos aventureros de la ciencia, 
-            particularmente del Grupo Alfa Centauri (incluir redes sociales del grupo IG, FB), 
+            particularmente del Grupo Alfa Centauri (@alfacentauriutb), 
             del semillero de investigación de la Universidad Tecnológica de Bolivar (utb.edu.co) 
             en Cartagena de Indías, Colombia.
             <br></br>
