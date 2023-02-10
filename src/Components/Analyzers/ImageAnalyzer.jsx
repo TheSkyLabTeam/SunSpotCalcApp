@@ -16,25 +16,34 @@ export const ImageAnalyzer = (props) => {
 
     let xOne = 0;
     let yOne = 0;
-    let coorParameter = 256
-    let R = 221
+    let coorParameter = 256;
+    let R = 221;
 
     xOne = posX;
     yOne = posY;
 
-    useEffect(() => {
-        let screenWith = screen.availWidth;
+    let screenWith = screen.availWidth;
+
+    if (screenWith <= 512) {
+        R = 129.5;
+        console.log();
+        coorParameter = 150;
+    }
+
+    // useEffect(() => {
+    //     let screenWith = screen.availWidth;
       
-        if (screenWith <= 512) {
-          R = 129.5;
-          coorParameter = 150;
-        }
+    //     if (screenWith <= 512) {
+    //       R = 129.5;
+    //       console.log();
+    //       coorParameter = 150;
+    //     }
       
-        if (screenWith >= 512) {
-          R = 221;
-          coorParameter = 256;
-        }
-      }, [screen]);
+    //     if (screenWith >= 512) {
+    //       R = 221;
+    //       coorParameter = 256;
+    //     }
+    //   }, [screen]);
         
     // Function to get the coordinates of the x and y axis
 

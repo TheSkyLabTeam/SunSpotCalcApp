@@ -19,7 +19,7 @@ function App() {
               data-aos="fade-down" 
               data-aos-duration="800"
               data-aos-delay="500">
-                <Link to='/'>Home</Link>
+                <Link to='/'>Inicio</Link>
           </p>
           <p className='navLink'
               data-aos="fade-down" 

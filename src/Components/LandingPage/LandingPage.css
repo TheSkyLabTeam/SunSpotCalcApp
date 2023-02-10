@@ -139,8 +139,8 @@
 
 
 .sectionButton {
-    width: 15em;
-    height: 3.5em;
+    width: 15vw;
+    height: 3.5vw;
     margin-top: 2em;
 
     font-size: 1vw;
@@ -358,12 +358,24 @@ button > a {
         margin-top: 2em;
     }
 
+    .sectionButton {
+        width: 30vw;
+        height: 5vw;
+        margin-top: 2em;
+    
+        font-size: 1.5vw;
+        font-weight: 600;
+    
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
     /* Styles for the Call to Action section and the elements that contains*/
 
     #callToActionSection {
         padding: 5.5em 5.5em 0 1em;
         background-color: var(--darkest-color);
-        max-width: 90em;
+        max-width: 80vw;
     }
 
     #callTitle {
@@ -377,7 +389,7 @@ button > a {
 
     #callToActionDescription {
         margin-top: 2em;
-        width: 20.8em;
+        max-width: 70vw;
         font-weight: 400;
     }
 
@@ -509,6 +521,18 @@ button > a {
 
     }
 
+    .sectionButton {
+        width: 50vw;
+        height: 8vw;
+        margin-top: 2em;
+    
+        font-size: 2.5vw;
+        font-weight: 600;
+    
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
     /* Styles for the instruction section and the elements that contains*/
     #instructionSection {
         padding: 1em;
@@ -544,7 +568,7 @@ button > a {
     #callToActionSection {
         padding: 5.5em 5.5em 0 1em;
         background-color: var(--darkest-color);
-        max-width: 90em;
+        width: 60vw;
     }
 
     #callTitle {
@@ -558,7 +582,7 @@ button > a {
 
     #callToActionDescription {
         margin-top: 2em;
-        width: 20.8em;
+        max-width: 90vw;
         font-weight: 400;
     }
 

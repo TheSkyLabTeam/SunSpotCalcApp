@@ -50,20 +50,15 @@ export const AppResults = (props) => {
   
   
   let BCalc = props.bValues;
-  console.log(BCalc);
   let DAYS = props.days;
 
   let delta = diff(BCalc);
-  console.log('DeltaB', delta);
   let deltaDays = diff(DAYS);
-  console.log('Dias', deltaDays);
 
   let multipliedDAYS = (deltaDays.map(element => element * 360));
-  console.log(multipliedDAYS);
   
   if (multipliedDAYS.every(element => element !== 0) && delta.every(element => element !== 0)){
     T = divideArrays(multipliedDAYS, delta)
-    console.log(T);
   }
   
   

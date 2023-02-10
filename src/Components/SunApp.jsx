@@ -18,7 +18,6 @@ const SunApp = () => {
   const [BFour, setBFour] = useState(0);
 
   const [globalDate, setglobalDate] = useState(0);
-  console.log(globalDate);
   
   // Function for add days 
 
