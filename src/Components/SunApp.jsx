@@ -63,10 +63,20 @@ const SunApp = () => {
 
   }; 
 
+  // Function for refreshing the values
+
+  const refreshIt = () => {
+    setBOne(0);
+    setBTwo(0);
+    setBThree(0);
+    setBFour(0);
+    setglobalDate(0);
+  }
+
   return (
     <>
         <div className="mainApp">
-          <DateSelector sendingDate={globalDate => setglobalDate(globalDate)}/>
+          <DateSelector sendingDate={globalDate => setglobalDate(globalDate)} refreshIt={refreshIt}/>
           <AppNavbar />
           <div className="principal-container">
             <div className="display-image">

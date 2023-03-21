@@ -29,7 +29,7 @@
     margin-right: 2vw;
 }
 
-#dateSender {
+.buttonFromDate {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
 }
 
-#dateSender:hover {
+.buttonFromDate:hover {
     background-color: var(--color-yellow);
     color: var(--darkest-color);
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;

@@ -21,6 +21,7 @@ export const ImageAnalyzer = (props) => {
 
     xOne = posX;
     yOne = posY;
+    
 
     let screenWith = screen.availWidth;
 
@@ -176,7 +177,7 @@ export const ImageAnalyzer = (props) => {
             className='analizerRed' 
             onClick={() => {
                 props.sendingB(B1);
-                setVisibility(true)
+                setVisibility(true);
             }} 
             ref={ref} 
             style={ 
