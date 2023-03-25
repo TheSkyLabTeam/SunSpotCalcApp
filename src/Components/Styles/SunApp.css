@@ -25,6 +25,12 @@ body {
     flex-direction: row;
 }
 
+.pointer {
+    width: 5px;
+    height: 5px;
+    background-color: red;
+}
+
 /* Styles for the display of the image */
 
 #display-image {

@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       
       <nav id='navbar'>
-        <h5 id="navbar-brand" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300"><img id='sunsLogo' src={SunsLogo} alt="mainLogo" /></h5>
+        <h5 id="navbar-brand" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300"><Link to='/'><img id='sunsLogo' src={SunsLogo} alt="mainLogo" /></Link></h5>
         <div id="navbar-links">
           <p className='navLink' 
               data-aos="fade-down" 

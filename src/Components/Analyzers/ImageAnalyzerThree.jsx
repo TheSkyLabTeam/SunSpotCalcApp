@@ -12,6 +12,10 @@ export const ImageAnalyzerThree = (props) => {
 
     let refDate = new Date();
 
+    // Parameters for refresh the coords
+
+    const refreshCoords = props.refreshCoords;
+
     // defining variables for the x and y axis coordinates of the click in each display
 
     let xOne = 0;
@@ -29,23 +33,6 @@ export const ImageAnalyzerThree = (props) => {
         console.log();
         coorParameter = 150;
     }
-
-    // useEffect(() => {
-    //     let screenWith = screen.availWidth;
-      
-    //     if (screenWith <= 512) {
-    //       R = 129.5;
-    //       console.log();
-    //       coorParameter = 150;
-    //     }
-      
-    //     if (screenWith >= 512) {
-    //       R = 221;
-    //       coorParameter = 256;
-    //     }
-    //   }, [screen]);
-        
-    // Function to get the coordinates of the x and y axis
 
     const ref = useRef(null);
     // const value = {this:props.value}
@@ -168,8 +155,33 @@ export const ImageAnalyzerThree = (props) => {
     let B2 = Math.degrees(Math.asin(Math.cos(rho2)*Math.sin(Math.radians(B0))+Math.sin(rho2)*Math.cos(Math.radians(B0))*Math.cos(Math.radians(P-Pm))));
     let L2 = L0+Math.degrees(Math.asin(Math.sin(Math.radians(P-Pm))*Math.sin(rho2)*Math.cos(Math.radians(B2))));
 
-    // Funciones para los estilos
-    const [visibility, setVisibility] = useState(false);
+    // Function for refresh the coordinates
+
+    useEffect(() => {
+        if (refreshCoords == true) {
+          setposX(0);
+          setposY(0)
+        }
+        if (refreshCoords == false) {
+          xOne = posX;
+          yOne = posY;
+        }
+      }, [refreshCoords, xOne, yOne]);
+      
+  
+      // Function for display or not the alert 
+  
+      useEffect(() => {
+        if (xOne == 0) {
+          document.getElementById("sendedGreen").style.display = "none"
+        }
+  
+        if (xOne != 0) {
+          document.getElementById("sendedGreen").style.display = "flex"
+        }
+      
+        
+      }, [xOne]);
     
     return (
         <div className='ImageAnalizer' id='AnalizerThree'>
@@ -177,7 +189,6 @@ export const ImageAnalyzerThree = (props) => {
             className='analizerGreen'
             onClick={() => {
                 props.sendingB(B1);
-                setVisibility(true)
             }} 
             ref={ref} 
             style={ 
@@ -187,13 +198,7 @@ export const ImageAnalyzerThree = (props) => {
 
 
             }>
-                    <div className="sendedAlert" id="sendedGreen" 
-                    style={
-                        visibility === true
-                        ? {display: `flex`}
-                        : {display: `none`}
-        
-                    }>Coordenadas enviadas</div>
+                    <div className="sendedAlert" id="sendedGreen">Coordenadas enviadas</div>
 
             </div>
             <div className="detailsContainer">

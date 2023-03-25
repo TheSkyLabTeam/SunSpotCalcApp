@@ -7,10 +7,15 @@ export const ImageAnalyzer = (props) => {
 
     const [posX, setposX] = useState(0);
     const [posY, setposY] = useState(0);
+    const [isPointVisible, setIsPointVisible] = useState(false);
 
     // Reference date 
 
     let refDate = new Date();
+
+    // Parameters for refresh the coords
+
+    const refreshCoords = props.refreshCoords;
 
     // defining variables for the x and y axis coordinates of the click in each display
 
@@ -27,26 +32,8 @@ export const ImageAnalyzer = (props) => {
 
     if (screenWith <= 512) {
         R = 129.5;
-        console.log();
         coorParameter = 150;
     }
-
-    // useEffect(() => {
-    //     let screenWith = screen.availWidth;
-      
-    //     if (screenWith <= 512) {
-    //       R = 129.5;
-    //       console.log();
-    //       coorParameter = 150;
-    //     }
-      
-    //     if (screenWith >= 512) {
-    //       R = 221;
-    //       coorParameter = 256;
-    //     }
-    //   }, [screen]);
-        
-    // Function to get the coordinates of the x and y axis
 
     const ref = useRef(null);
     // const value = {this:props.value}
@@ -169,7 +156,36 @@ export const ImageAnalyzer = (props) => {
     let L2 = L0+Math.degrees(Math.asin(Math.sin(Math.radians(P-Pm))*Math.sin(rho2)*Math.cos(Math.radians(B2))));
 
     // Funciones para los estilos
-    const [visibility, setVisibility] = useState(false);
+    const [visibility, setVisibility] = useState('');
+
+    // Function for refresh the coordinates
+
+    useEffect(() => {
+      if (refreshCoords == true) {
+        setposX(0);
+        setposY(0)
+      }
+      if (refreshCoords == false) {
+        xOne = posX;
+        yOne = posY;
+      }
+    }, [refreshCoords, xOne, yOne]);
+    
+
+    // Function for display or not the alert 
+
+    useEffect(() => {
+      if (xOne == 0) {
+        document.getElementById("sendedRed").style.display = "none"
+      }
+
+      if (xOne != 0) {
+        document.getElementById("sendedRed").style.display = "flex"
+      }
+    
+      
+    }, [xOne]);
+
     
     return (
         <div className='ImageAnalizer' id='AnalizerOne' data-aos="fade-right" data-aos-delay="500">
@@ -177,7 +193,6 @@ export const ImageAnalyzer = (props) => {
             className='analizerRed' 
             onClick={() => {
                 props.sendingB(B1);
-                setVisibility(true);
             }} 
             ref={ref} 
             style={ 
@@ -187,13 +202,8 @@ export const ImageAnalyzer = (props) => {
 
 
             }>
-                    <div className="sendedAlert" id="sendedRed" 
-                    style={
-                        visibility === true
-                        ? {display: `flex`}
-                        : {display: `none`}
-        
-                    }>Coordenadas enviadas</div>
+                    <div className="sendedAlert" id="sendedRed">Coordenadas enviadas</div>
+                    <div className='pointer' style={{paddingTop: `${posX}`}}>h</div>
 
             </div>
             <div className="detailsContainer">

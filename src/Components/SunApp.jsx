@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import './Styles/SunApp.css'
 import 'aos/dist/aos.css';
 
@@ -61,9 +61,11 @@ const SunApp = () => {
     dateNumberForThree = getDayNumber(dateForThree);
     dateNumberForFour = getDayNumber(dateForFour);
 
-  }; 
+  };
 
   // Function for refreshing the values
+
+  const [refreshCoords, setRefreshCoords] = useState(false)
 
   const refreshIt = () => {
     setBOne(0);
@@ -71,7 +73,19 @@ const SunApp = () => {
     setBThree(0);
     setBFour(0);
     setglobalDate(0);
+    setRefreshCoords(true);
   }
+
+  useEffect(() => {
+    if (refreshCoords) {
+      setBOne(0);
+      setBTwo(0);
+      setBThree(0);
+      setBFour(0);
+      setglobalDate(0);
+      setRefreshCoords(false); // desactivamos la función
+    }
+  }, [refreshCoords]);
 
   return (
     <>
@@ -81,21 +95,21 @@ const SunApp = () => {
           <div className="principal-container">
             <div className="display-image">
               <h1 className="refnumber" id='refOne' data-aos="fade-left" data-aos-delay="200">0<span id='HighOne'>1</span></h1>
-              <ImageAnalyzer date={dateForOne} sendingB={BOne => setBOne(BOne)} />
+              <ImageAnalyzer date={dateForOne} sendingB={BOne => setBOne(BOne)} refreshCoords={refreshCoords}/>
               
             </div>
           </div>
           <div className="principal-container">
               <h1 className="refnumber" id='refTwo'>0<span id='HighTwo'>2</span></h1>
-              <ImageAnalyzerTwo date={dateForTwo} sendingB={BTwo => setBTwo(BTwo)} />
+              <ImageAnalyzerTwo date={dateForTwo} sendingB={BTwo => setBTwo(BTwo)} refreshCoords={refreshCoords}/>
           </div>
           <div className="principal-container">
               <h1 className="refnumber" id='refThree'>0<span id='HighThree'>3</span></h1>
-              <ImageAnalyzerThree date={dateForThree} sendingB={BThree => setBThree(BThree)} />
+              <ImageAnalyzerThree date={dateForThree} sendingB={BThree => setBThree(BThree)} refreshCoords={refreshCoords}/>
           </div>
           <div className="principal-container">
               <h1 className="refnumber" id='refFour'>0<span id='HighFour'>4</span></h1>
-              <ImageAnalyzerFour date={dateForFour} sendingB={BFour => setBFour(BFour)} />
+              <ImageAnalyzerFour date={dateForFour} sendingB={BFour => setBFour(BFour)} refreshCoords={refreshCoords}/>
           </div>
           <div className="principal-container">
               <AppResults bValues={[BOne, BTwo, BThree, BFour]} days={[dateNumberForOne, dateNumberForTwo, dateNumberForThree, dateNumberForFour]}/>
