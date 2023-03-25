@@ -203,7 +203,6 @@ export const ImageAnalyzer = (props) => {
 
             }>
                     <div className="sendedAlert" id="sendedRed">Coordenadas enviadas</div>
-                    <div className='pointer' style={{paddingTop: `${posX}`}}>h</div>
 
             </div>
             <div className="detailsContainer">
