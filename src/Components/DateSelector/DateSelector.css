@@ -50,6 +50,10 @@
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
 }
 
+#refreshButton:hover {
+    background-color: var(--color-blue);
+}
+
 /* Styles for the inputs +*/
 
 input[type="date"] {
