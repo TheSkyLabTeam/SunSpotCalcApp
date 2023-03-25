@@ -52,6 +52,7 @@
 
 #refreshButton:hover {
     background-color: var(--color-blue);
+    color: var(--brightest-color);
 }
 
 /* Styles for the inputs +*/
