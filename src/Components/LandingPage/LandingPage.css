@@ -101,23 +101,31 @@
     margin: 35vh 0em 0em 5.5vw;
 }
 
-#headerSubtitle {
+.headerSubtitle {
     font-weight: 400;
-    font-size: 2.43vw;
+    font-size: 2.2vw;
     margin: 0 0 0 0;
+}
+
+#goingInstructions {
+    position: absolute;
+    font-size: 400;
+    font-size: 1.1vw;
+    bottom: 4vw;
+    align-content: center;
 }
 
 #headerTitle {
     color: var(--brightest-color);
     font-weight: 800;
-    font-size: 4vw;
+    font-size: 3.2vw;
 }
 
 #headerParagraph {
     color: var(--brightest-color);
     font-weight: 300;
-    font-size: 1.6vw;
-    width: 20em;
+    font-size: 1.3vw;
+    width: 25em;
     
 
 }
@@ -132,8 +140,10 @@
 
 .sectionSubtitle {
     color: var(--brightest-color);
-    font-size: 1.55vw;
+    margin-top: 1vw;
+    font-size: 1.3vw;
     font-weight: 300;
+    font-style: normal;
     
 }
 

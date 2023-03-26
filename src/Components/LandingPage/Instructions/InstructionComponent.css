@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     margin: 2em;
-    width: 43.9%;
+    width: 39vw;
     
 }
 
@@ -24,14 +24,15 @@
 
 #titleInstruction {
     font-weight: 600;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     color: var(--brightest-color);
 }
 
 #detailInstruction {
     color: var(--brightest-color);
     font-weight: 300;
-    font-size: 1.3vw;
+    font-size: 16px;
+    line-height: 20px;
     margin: 1em 0 1em 0;
 }
 

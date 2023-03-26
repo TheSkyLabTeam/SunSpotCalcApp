@@ -7,16 +7,18 @@ export const InstructionComponent = (props) => {
 
     /*Title variansts*/ 
     const instructionTitles = [
-        "Selecciona una fecha al menos cuatro días anterior a la fecha actual.", 
+        "Selecciona una fecha para cuatro imágenes del Sol.", 
         "Identifica una mancha en cada imagen y selecciónala para extraer sus coordenadas.",
         "Este paso va por nuestra cuenta.",
+        "¿Quieres conocer más?",
     ];
 
     /*Paragraph variants*/
     const paragraphTitle = [
-        "La aplicación buscará imágenes del sol desde la primera fecha hasta otras tres.",
-        "Asegúrate de seleccionar la misma mancha en cada imagen.",
+        "La aplicación buscará imágenes del Sol desde la primera fecha hasta otras tres fechas. Las imágenes forman parte de la colección del Solar & Heliospheric Observatory (SOHO).",
+        "Asegúrate de seleccionar la misma mancha en cada imagen y hazlo con mucho cuidado para tener resultados más precisos.",
         "La aplicación se encargará del resto y mostrará los cálculos en la sección de resultados.",
+        "Para tener más detalles y mucha más información de como la aplicación obtiene resultados, visita conoce más."
     ];
 
     let textColor = "";
