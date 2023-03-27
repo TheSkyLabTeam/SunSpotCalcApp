@@ -57,6 +57,9 @@ export const AboutPage = () => {
         Cada usuario debe obtener su propio valor del periodo de rotación y debe deducir su propio valor del periodo de rotación y luego si hay más usuarios, pueden reunirse y compartir sus respuestas, explicando cómo las calcularon.
         Manos a las manchas….!
         </p>
+        <br />
+        <br />
+        <p id="loveParagraf">Hecho con ❤️ por The Skylab Team</p>
     </div>
   )
 }
