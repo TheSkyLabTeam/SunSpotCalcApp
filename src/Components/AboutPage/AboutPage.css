@@ -21,6 +21,8 @@
 .aboutTitle {
     font-size: 3vw;
     font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 #conoceTitle {
@@ -32,12 +34,28 @@
     color: var(--color-yellow);
 }
 
+#instructionTitleAbout {
+    padding-top: 8vh;
+    color: var(--color-green);
+}
+
+
 .aboutParagraf {
     margin-top: 2vh;
-    max-width: 60vw;
+    max-width: 70vw;
     font-size: 1.2vw;
     font-weight: 300;
     color: var(--brightest-color);
+}
+
+span > a {
+    text-decoration: underline;
+    font-weight: 300;
+    color: var(--color-green);
+}
+
+.aboutEquations {
+    width: 50vw;
 }
 
 #teamParagraf {
