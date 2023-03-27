@@ -36,6 +36,19 @@
     margin: 1em 0 1em 0;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+span > a{
+    color: #1982C4;
+    text-decoration: none;
+    text-decoration:underline;
+    font-weight: 600;
+}
+
 /* Tablet version */
 
 @media (max-width: 900px) {

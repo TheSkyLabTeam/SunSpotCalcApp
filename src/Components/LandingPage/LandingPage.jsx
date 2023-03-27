@@ -1,6 +1,7 @@
 import React from 'react'
 import { InstructionComponent } from './Instructions/InstructionComponent'
-import {Route, Routes, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Link as ScrollLink} from 'react-scroll'
 import './LandingPage.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -25,7 +26,7 @@ const LandingPage = () => {
           <h1 id='headerTitle'>SunSpotCalc</h1>
           <p id='headerParagraph'>La manera precisa y fácil de calcular la rotación del sol usando imágenes</p>
 
-          <h6 id='goingInstructions'>Instrucciones -{'>'} </h6>
+          <h6 id='goingInstructions'><ScrollLink to='instructionSection' spy={true} smooth={true} offset={-20} duration={500}>Instrucciones -{'>'} </ScrollLink></h6>
         </div>
       </section>
 

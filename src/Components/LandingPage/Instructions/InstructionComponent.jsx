@@ -1,4 +1,5 @@
 import './InstructionComponent.css'
+import {Link } from 'react-router-dom'
 
 export const InstructionComponent = (props) => {
 
@@ -18,7 +19,7 @@ export const InstructionComponent = (props) => {
         "La aplicación buscará imágenes del Sol desde la primera fecha hasta otras tres fechas. Las imágenes forman parte de la colección del Solar & Heliospheric Observatory (SOHO).",
         "Asegúrate de seleccionar la misma mancha en cada imagen y hazlo con mucho cuidado para tener resultados más precisos.",
         "La aplicación se encargará del resto y mostrará los cálculos en la sección de resultados.",
-        "Para tener más detalles y mucha más información de como la aplicación obtiene resultados, visita conoce más."
+        <span>Para tener más detalles y mucha más información de cómo la aplicación obtiene resultados, visita <Link id="LinkBlue"to='/Conoce'>Conoce.</Link></span>
     ];
 
     let textColor = "";
