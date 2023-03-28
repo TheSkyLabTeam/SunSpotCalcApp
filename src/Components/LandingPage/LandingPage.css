@@ -203,48 +203,25 @@ button > a {
     margin-top: 2em;
 }
 
-/* Styles for the Call to Action section and the elements that contains*/
+/* Styles for the call to action section and the elements that contains*/
 
 #callToActionSection {
-    padding: 5.5em 5.5em 0 5.5em;
-    background-color: var(--darkest-color);
-    max-width: 80em;
+    padding: 3em 5.5em 3em 5.5em;
+    display: flex;
 }
 
-#callTitle {
+.actionRow {
+    width: 50%;
+}
+
+#actionTitle {
     color: var(--color-yellow);
 }
 
-#gridCallToAction {
-    display: flex;
-    flex-direction: row;
+#actionLink {
+    color: var(--color-yellow);
+    text-decoration: underline;
 }
-
-#callToActionDescription {
-    margin-top: 2em;
-    max-width: 40vw;
-    font-weight: 400;
-}
-
-#callToActionButton {
-    background-color: var(--darkest-color);
-    color: white;
-    border: 0.1em solid #FFCA3A;
-    transition: all 300ms;
-}
-
-#callToActionButton:hover {
-    background-color: var(--color-yellow);
-    color: var(--darkest-color);
-    border: 0;
-    transition: all 300ms;
-}
-
-#gridCallToAction {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 /* Tablet Version */
 
 @media (max-width: 950px) {

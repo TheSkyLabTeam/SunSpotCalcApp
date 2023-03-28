@@ -45,14 +45,15 @@ const LandingPage = () => {
       </section>
 
       <section id="callToActionSection" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400" data-aos-once="true">
-        <h1 className="sectionTitle" id='callTitle'>Experimenta</h1>
-        <h6 className="sectionSubtitle" id="callSubtitle">¡Prueba SunSpotCalc ahora!</h6>
-        <div id="gridCallToAction">
-          <div className="rowCall" id='textCallToAction'>
-            <h6 className="sectionSubtitle" id='callToActionDescription'>Descubre porque SunSpotCalc es la mejor aplicación para calcular la rotación del sol.</h6>
-            <button className='sectionButton' id='callToActionButton'><Link to='/App'>¡Usa SunSpotCalc!</Link></button>
-          </div>
-          <div className="rowCall" id='imageCallToAction'></div>
+        
+        <div className="actionRow" id="oneRowAction">
+          <h1 className="sectionTitle" id="actionTitle">Experimenta</h1>
+          <h6 className="sectionSubtitle" id="actionSubtitle">¡Prueba SunSpotCal ahora!</h6>
+        </div>
+        <div className="actionRow" id='twoRowAction'>
+          <h6 className="sectionSubtitle" id="actionSubtitle">Descubre porque SunSpotCalc es la mejor aplicación para calcular la rotación del sol. 
+            Prueba la app <Link to="/App" id='actionLink'>aqui</Link>
+          </h6>
         </div>
       </section>
     </div>
