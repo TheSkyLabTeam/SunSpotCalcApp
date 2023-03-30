@@ -30,7 +30,7 @@ export const AboutPage = () => {
         y observar una mancha solar cada día. A primera vista verá que la mancha solar se mueve a través del disco solar, 
         esto es debido a la rotación particular del sol. No necesita hacer muchos cálculos, 
         pero si quiere saber más de cómo esto funciona 
-        lo invitamos a revisar la siguiente dirección: <span id='lighterGreen'><a href='https://www.cosmos.esa.int/documents/519784/1185714/teachers_guide/6fd53676-55b4-415d-9fff-e27f6270ca70'>https://www.cosmos.esa.int/documents/519784/1185714/teachers_guide/6fd53676-55b4-415d-9fff-e27f6270ca70 </a></span><br/>
+        lo invitamos a revisar la siguiente dirección: <span id='lighterGreen'><a href='https://www.cosmos.esa.int/documents/519784/1185714/teachers_guide/6fd53676-55b4-415d-9fff-e27f6270ca70'>CESAR - Science Case</a></span><br/>
         <br/>
         Para cada mancha o grupo solar que puedan seguir, los usuarios deberán calcular la velocidad angular de la mancha o grupo utilizando la siguiente fórmula: 
         </p>

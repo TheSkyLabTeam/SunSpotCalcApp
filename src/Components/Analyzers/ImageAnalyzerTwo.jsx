@@ -187,7 +187,7 @@ export const ImageAnalyzerTwo = (props) => {
   
         if (xOne != 0) {
           document.getElementById("sendedYellow").style.display = "flex"
-          setMsgDetail('¡Listo! Ahora haz click en la misma mancha solar que usaste en el paso anterior');
+          setMsgDetail('¡Listo! Ahora baja a la tercera imagen');
           document.getElementById("detailsTitleYellow").style.color = "#FFCA3A";
           document.getElementById("detailsTitleYellow").style.backgroundColor = "#262626";
           document.getElementById("subtitleYellow").style.display = 'none'
