@@ -176,6 +176,7 @@ export const ImageAnalyzerFour = (props) => {
           document.getElementById("sendedBlue").style.display = "none";
           setMsgDetail('Haz clic en la misma mancha solar');
           document.getElementById("detailsTitleBlue").style.color = "#F6F6F6";
+          document.getElementById("subtitleBlue").style.display = 'flex'
         }
   
         if (xOne != 0) {
@@ -183,6 +184,7 @@ export const ImageAnalyzerFour = (props) => {
           setMsgDetail('¡Listo! Ahora baja para conocer los resultados');
           document.getElementById("detailsTitleBlue").style.color = "#1982C4";
           document.getElementById("detailsTitleBlue").style.backgroundColor = "#262626";
+          document.getElementById("subtitleBlue").style.display = 'none'
         }
       
         
@@ -208,6 +210,7 @@ export const ImageAnalyzerFour = (props) => {
             </div>
             <div className="detailsContainer" id='AnalizerFour'>
                 <h4 className='titleDetail' id="detailsTitleBlue">{msgDetail}</h4>
+                <p className="detailSubtitle" id='subtitleBlue'>Ahora haz click en la misma macha solar que usaste en el paso anterior y obtén las nuevas coordenadas luego que la mancha solar se ha movido y sigue hacia abajo en la página para observar los resultados de la rotación solar para esta mancha.</p>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)} px.</h5>
             </div>

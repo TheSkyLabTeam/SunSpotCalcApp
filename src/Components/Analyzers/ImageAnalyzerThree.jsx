@@ -178,13 +178,15 @@ export const ImageAnalyzerThree = (props) => {
           document.getElementById("sendedGreen").style.display = "none";
           setMsgDetail('Haz clic en la misma mancha solar');
           document.getElementById("detailsTitleGreen").style.color = "#F6F6F6";
+          document.getElementById("subtitleGreen").style.display = 'flex'
         }
   
         if (xOne != 0) {
           document.getElementById("sendedGreen").style.display = "flex"
-          setMsgDetail('¡Listo! Ahora baja a la cuarta imagen');
+          setMsgDetail('¡Listo! Ahora haz click en la misma mancha solar que usaste en el paso anterior');
           document.getElementById("detailsTitleGreen").style.color = "#8AC926";
           document.getElementById("detailsTitleGreen").style.backgroundColor = "#262626";
+          document.getElementById("subtitleGreen").style.display = 'none'
         }
       
         
@@ -210,6 +212,7 @@ export const ImageAnalyzerThree = (props) => {
             </div>
             <div className="detailsContainer">
                 <h4 className='titleDetail' id="detailsTitleGreen">{msgDetail}</h4>
+                <p className="detailSubtitle" id='subtitleGreen'>Ahora haz click en la misma macha solar que usaste en el paso anterior y obten las nuevas coordenadas luego que la mancha solar se ha movido.</p>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)} px.</h5>
             </div>

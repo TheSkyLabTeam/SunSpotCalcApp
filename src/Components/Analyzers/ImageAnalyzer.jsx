@@ -183,6 +183,7 @@ export const ImageAnalyzer = (props) => {
         document.getElementById("sendedRed").style.display = "none"
         setMsgDetail('Haz clic en una mancha solar');
         document.getElementById("detailsTitleRed").style.color = "#F6F6F6";
+        document.getElementById("subtitleRed").style.display = 'flex'
         
 
       }
@@ -191,6 +192,7 @@ export const ImageAnalyzer = (props) => {
         document.getElementById("sendedRed").style.display = "flex"
         setMsgDetail('¡Listo! Ahora baja a la segunda imagen');
         document.getElementById("detailsTitleRed").style.color = "#FF595E"
+        document.getElementById("subtitleRed").style.display = 'none'
       }
     
       
@@ -218,6 +220,7 @@ export const ImageAnalyzer = (props) => {
             </div>
             <div className="detailsContainer">
                 <h4 className='titleDetail' id="detailsTitleRed">{msgDetail}</h4>
+                <p className="detailSubtitle" id='subtitleRed'>Elige una fecha inicial y haz click en una de las manchas solares disponibles en la imagen para obtener sus coordenadas</p>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)} px.</h5>
             </div>

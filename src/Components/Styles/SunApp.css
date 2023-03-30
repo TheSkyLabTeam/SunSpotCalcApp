@@ -209,6 +209,22 @@ body::-webkit-scrollbar-thumb {
     color: var(--brightest-color);
 }
 
+#subtitleRed {
+    color: var(--color-red);
+}
+
+#subtitleYellow {
+    color: var(--color-yellow);
+}
+
+#subtitleGreen {
+    color: var(--color-green);
+}
+
+#subtitleBlue {
+    color: var(--color-blue);
+}
+
 /* Tablet version */
 
 @media (max-width: 1000px) {
@@ -305,8 +321,18 @@ body::-webkit-scrollbar-thumb {
     }
 
     .titleDetail {
-        font-size: 4vw;
+        font-size: 3.5vw;
         max-width: 80vw;
+    }
+
+    
+
+    .detailSubtitle {
+        color: var(--brightest-color);
+        font-family: 200;
+        font-size: 2.5vw;
+        width: 68vw;
+        padding: 2vw 0 2vw 0;
     }
 
 }

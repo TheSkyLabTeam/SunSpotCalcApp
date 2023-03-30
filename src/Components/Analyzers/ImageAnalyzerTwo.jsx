@@ -181,14 +181,16 @@ export const ImageAnalyzerTwo = (props) => {
           document.getElementById("sendedYellow").style.display = "none";
           setMsgDetail('Selecciona la misma macha solar');
           document.getElementById("detailsTitleYellow").style.color = "#F6F6F6";
+          document.getElementById("subtitleYellow").style.display = 'flex'
           
         }
   
         if (xOne != 0) {
           document.getElementById("sendedYellow").style.display = "flex"
-          setMsgDetail('¡Listo! Ahora baja a la tercera imagen');
+          setMsgDetail('¡Listo! Ahora haz click en la misma mancha solar que usaste en el paso anterior');
           document.getElementById("detailsTitleYellow").style.color = "#FFCA3A";
           document.getElementById("detailsTitleYellow").style.backgroundColor = "#262626";
+          document.getElementById("subtitleYellow").style.display = 'none'
         }
       
         
@@ -215,6 +217,7 @@ export const ImageAnalyzerTwo = (props) => {
             </div>
             <div className="detailsContainer">
                 <h4 className='titleDetail' id="detailsTitleYellow">{msgDetail}</h4>
+                <p className="detailSubtitle" id='subtitleYellow'>Ahora haz click en la misma macha solar que usaste en el paso anterior y obten las nuevas coordenadas luego que la mancha solar se ha movido.</p>
                 <h5 className="coordinate-details">Coor X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coor Y: {posY.toFixed(2)} px.</h5>
             </div>
