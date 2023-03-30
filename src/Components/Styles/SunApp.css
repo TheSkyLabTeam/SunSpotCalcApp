@@ -304,4 +304,9 @@ body::-webkit-scrollbar-thumb {
         
     }
 
+    .titleDetail {
+        font-size: 4vw;
+        max-width: 80vw;
+    }
+
 }
