@@ -112,13 +112,17 @@ span > a {
         font-size: 7vw;
         font-weight: 700;
     }
+
+    .aboutEquations {
+        width: 90vw;
+    }
     
     #conoceTitle {
         color: var(--color-red);
     }
     
     #teamTitle {
-        padding-top: 8vh;
+        padding-top: 2vh;
         color: var(--color-yellow);
     }
     

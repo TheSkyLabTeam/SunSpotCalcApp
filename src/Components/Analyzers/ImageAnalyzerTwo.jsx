@@ -172,13 +172,23 @@ export const ImageAnalyzerTwo = (props) => {
 
     // Function for display or not the alert 
 
+    // Mensage that appears in the detailsTitle
+
+    const [msgDetail, setMsgDetail] = useState();
+
     useEffect(() => {
         if (xOne == 0) {
-          document.getElementById("sendedYellow").style.display = "none"
+          document.getElementById("sendedYellow").style.display = "none";
+          setMsgDetail('Selecciona la misma macha solar');
+          document.getElementById("detailsTitleYellow").style.color = "#F6F6F6";
+          
         }
   
         if (xOne != 0) {
           document.getElementById("sendedYellow").style.display = "flex"
+          setMsgDetail('¡Listo! Ahora baja a la tercera imagen');
+          document.getElementById("detailsTitleYellow").style.color = "#FFCA3A";
+          document.getElementById("detailsTitleYellow").style.backgroundColor = "#262626";
         }
       
         
@@ -204,7 +214,7 @@ export const ImageAnalyzerTwo = (props) => {
 
             </div>
             <div className="detailsContainer">
-                <h4 id="detailsTitle">Selecciona una mancha </h4>
+                <h4 className='titleDetail' id="detailsTitleYellow">{msgDetail}</h4>
                 <h5 className="coordinate-details">Coor X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coor Y: {posY.toFixed(2)} px.</h5>
             </div>

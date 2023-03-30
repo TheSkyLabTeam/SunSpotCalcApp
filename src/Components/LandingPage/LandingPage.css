@@ -562,46 +562,24 @@ button > a {
         margin-top: 2em;
     }
 
-    /* Styles for the Call to Action section and the elements that contains*/
+    /* Styles for the call to action section and the elements that contains*/
 
     #callToActionSection {
-        padding: 5.5em 5.5em 0 1em;
-        background-color: var(--darkest-color);
-        width: 60vw;
+        padding: 3em 1em 3em 1em;
+        display: grid;
     }
 
-    #callTitle {
+    .actionRow {
+        width: 100%;
+    }
+
+    #actionTitle {
         color: var(--color-yellow);
     }
 
-    #gridCallToAction {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #callToActionDescription {
-        margin-top: 2em;
-        max-width: 90vw;
-        font-weight: 400;
-    }
-
-    #callToActionButton {
-        background-color: var(--darkest-color);
-        color: white;
-        border: 0.1em solid #FFCA3A;
-        transition: all 300ms;
-    }
-
-    #callToActionButton:hover {
-        background-color: var(--color-yellow);
-        color: var(--darkest-color);
-        border: 0;
-        transition: all 300ms;
-    }
-
-    #gridCallToAction {
-        display: flex;
-        flex-wrap: wrap;
+    #actionLink {
+        color: var(--color-yellow);
+        text-decoration: underline;
     }
 
 }

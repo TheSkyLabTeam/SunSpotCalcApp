@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutPage.css'
 import ecuacionVelocidadAngular from '../AboutPage/ecuacionVelocidadAngular.svg'
-import ecuacionPeriodoRotacion from '../AboutPage/periodoDeRotacion.svg'
+import ecuacionPeriodoRotacion from '../AboutPage/periodoDeRotacion.svg' 
 
 export const AboutPage = () => {
   return (

@@ -170,6 +170,10 @@ export const ImageAnalyzer = (props) => {
         yOne = posY;
       }
     }, [refreshCoords, xOne, yOne]);
+
+    // Mensage that appears in the detailsTitle
+
+    const [msgDetail, setMsgDetail] = useState();
     
 
     // Function for display or not the alert 
@@ -177,10 +181,16 @@ export const ImageAnalyzer = (props) => {
     useEffect(() => {
       if (xOne == 0) {
         document.getElementById("sendedRed").style.display = "none"
+        setMsgDetail('Haz clic en una mancha solar');
+        document.getElementById("detailsTitleRed").style.color = "#F6F6F6";
+        
+
       }
 
       if (xOne != 0) {
         document.getElementById("sendedRed").style.display = "flex"
+        setMsgDetail('¡Listo! Ahora baja a la segunda imagen');
+        document.getElementById("detailsTitleRed").style.color = "#FF595E"
       }
     
       
@@ -193,6 +203,7 @@ export const ImageAnalyzer = (props) => {
             className='analizerRed' 
             onClick={() => {
                 props.sendingB(B1);
+
             }} 
             ref={ref} 
             style={ 
@@ -206,7 +217,7 @@ export const ImageAnalyzer = (props) => {
 
             </div>
             <div className="detailsContainer">
-                <h4 id="detailsTitle">Selecciona una mancha</h4>
+                <h4 className='titleDetail' id="detailsTitleRed">{msgDetail}</h4>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)} px.</h5>
             </div>

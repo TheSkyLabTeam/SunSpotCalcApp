@@ -167,15 +167,22 @@ export const ImageAnalyzerFour = (props) => {
       }, [refreshCoords, xOne, yOne]);
       
   
-      // Function for display or not the alert 
-  
-      useEffect(() => {
+        // Mensage that appears in the detailsTitle
+
+    const [msgDetail, setMsgDetail] = useState();
+
+    useEffect(() => {
         if (xOne == 0) {
-          document.getElementById("sendedBlue").style.display = "none"
+          document.getElementById("sendedBlue").style.display = "none";
+          setMsgDetail('Haz clic en la misma mancha solar');
+          document.getElementById("detailsTitleBlue").style.color = "#F6F6F6";
         }
   
         if (xOne != 0) {
           document.getElementById("sendedBlue").style.display = "flex"
+          setMsgDetail('¡Listo! Ahora baja para conocer los resultados');
+          document.getElementById("detailsTitleBlue").style.color = "#1982C4";
+          document.getElementById("detailsTitleBlue").style.backgroundColor = "#262626";
         }
       
         
@@ -200,7 +207,7 @@ export const ImageAnalyzerFour = (props) => {
 
             </div>
             <div className="detailsContainer" id='AnalizerFour'>
-                <h4 id="detailsTitle">Selecciona una macha </h4>
+                <h4 className='titleDetail' id="detailsTitleBlue">{msgDetail}</h4>
                 <h5 className="coordinate-details">Coord X: {posX.toFixed(2)} px.</h5>
                 <h5 className="coordinate-details">Coord Y: {posY.toFixed(2)} px.</h5>
             </div>
