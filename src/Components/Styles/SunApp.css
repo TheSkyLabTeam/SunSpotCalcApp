@@ -332,6 +332,7 @@ body::-webkit-scrollbar-thumb {
 
     .titleDetail {
         font-size: 3.5vw;
+        width: 80vw;
         max-width: 80vw;
     }
 
