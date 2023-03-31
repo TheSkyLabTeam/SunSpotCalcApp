@@ -54,6 +54,11 @@ span > a {
     color: var(--color-green);
 }
 
+.githubLink {
+    color: var(--color-yellow);
+    text-decoration: underline;
+}
+
 .aboutEquations {
     width: 50vw;
 }

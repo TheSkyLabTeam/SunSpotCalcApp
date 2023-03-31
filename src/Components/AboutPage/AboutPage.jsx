@@ -20,15 +20,12 @@ export const AboutPage = () => {
         <p className="aboutParagraf" id='teamParagraf'>
             Daniel David Herrera Acevedo (acevedod at utb.edu.co).
             <br />
-            Github: <a href=""></a>
+            Github: <a className='githubLink' href="https://github.com/daniherreraa">daniherreraa</a>
             <br />
             <br />
             David Sierra Porta (dporta at utb.edu.co).
             <br />
-            Github: <a href=""></a>
-            <br />
-            <br />
-            Esperamos que les guste. Agradecemos cualquier comentario que tenga.
+            Github: <a className='githubLink' href="https://github.com/sierraporta">sierraporta</a>
         </p>
         <h1 className="aboutTitle" id="instructionTitleAbout">Instrucciones</h1>
         <p className="aboutParagraf" id="instructionParagraf">
