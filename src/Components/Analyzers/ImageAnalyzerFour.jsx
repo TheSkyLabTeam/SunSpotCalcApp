@@ -183,7 +183,6 @@ export const ImageAnalyzerFour = (props) => {
           document.getElementById("sendedBlue").style.display = "flex"
           setMsgDetail('¡Listo! Ahora baja para conocer los resultados');
           document.getElementById("detailsTitleBlue").style.color = "#1982C4";
-          document.getElementById("detailsTitleBlue").style.backgroundColor = "#262626";
           document.getElementById("subtitleBlue").style.display = 'none'
         }
       

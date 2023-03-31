@@ -112,10 +112,11 @@ body {
     font-size: 1.5vw;
     width: 30vw;
     max-width: 40vw;
+    padding-bottom: 18vw;
 }
 
 .detailsContainer {
-    margin: 43vh 0 0 4vh;
+    margin: 0vh 0 0 4vh;
     z-index: 2;
 }
 
@@ -264,6 +265,10 @@ body::-webkit-scrollbar-thumb {
 
     /* Styles for the details */
 
+    .titleDetail {
+        padding-bottom: 0vw;
+    }
+
     .detailsContainer {
         margin: 2vh 0 0 0vh;
         z-index: 2;
@@ -334,6 +339,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 3.5vw;
         width: 80vw;
         max-width: 80vw;
+        padding-bottom: 0vw;
     }
 
     

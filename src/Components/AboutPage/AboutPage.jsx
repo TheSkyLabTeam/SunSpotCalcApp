@@ -19,9 +19,15 @@ export const AboutPage = () => {
         <h1 className='aboutTitle' id='teamTitle'>Equipo</h1>
         <p className="aboutParagraf" id='teamParagraf'>
             Daniel David Herrera Acevedo (acevedod at utb.edu.co).
-            <br></br>
+            <br />
+            Github: <a href=""></a>
+            <br />
+            <br />
             David Sierra Porta (dporta at utb.edu.co).
-            <br></br>
+            <br />
+            Github: <a href=""></a>
+            <br />
+            <br />
             Esperamos que les guste. Agradecemos cualquier comentario que tenga.
         </p>
         <h1 className="aboutTitle" id="instructionTitleAbout">Instrucciones</h1>

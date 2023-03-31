@@ -189,7 +189,6 @@ export const ImageAnalyzerTwo = (props) => {
           document.getElementById("sendedYellow").style.display = "flex"
           setMsgDetail('¡Listo! Ahora baja a la tercera imagen');
           document.getElementById("detailsTitleYellow").style.color = "#FFCA3A";
-          document.getElementById("detailsTitleYellow").style.backgroundColor = "#262626";
           document.getElementById("subtitleYellow").style.display = 'none'
         }
       
