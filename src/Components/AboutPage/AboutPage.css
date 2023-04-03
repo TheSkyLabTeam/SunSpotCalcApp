@@ -67,6 +67,15 @@ span > a {
     width: 100%;
 }
 
+#creditsTitle {
+    color: var(--color-blue);
+}
+
+.creditsLink {
+    color: var(--color-blue);
+    text-decoration: underline;
+}
+
 #loveParagraf {
     display: flex;
     justify-content: center;

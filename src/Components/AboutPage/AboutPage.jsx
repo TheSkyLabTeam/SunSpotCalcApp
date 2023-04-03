@@ -20,12 +20,10 @@ export const AboutPage = () => {
         <p className="aboutParagraf" id='teamParagraf'>
             Daniel David Herrera Acevedo (acevedod at utb.edu.co).
             <br />
-            Github: <a className='githubLink' href="https://github.com/daniherreraa">daniherreraa</a>
-            <br />
-            <br />
             David Sierra Porta (dporta at utb.edu.co).
             <br />
-            Github: <a className='githubLink' href="https://github.com/sierraporta">sierraporta</a>
+            <br />
+            Esperamos que les guste. Agradecemos cualquier comentario que tengan. 💛
         </p>
         <h1 className="aboutTitle" id="instructionTitleAbout">Instrucciones</h1>
         <p className="aboutParagraf" id="instructionParagraf">
@@ -62,6 +60,21 @@ export const AboutPage = () => {
         </p>
         <br />
         <br />
+        <h1 className="aboutTile" id="creditsTitle">Creditos</h1>
+        <p className="aboutParagraf" id="credistParagraf">
+        Todas la imágenes que obtenemos para el desarrollo de la aplicación provienen de la página web del SOHO (<a className='creditsLink' href='https://soho.nascom.nasa.gov/data/data.html'>SOHO Data</a>) 
+        en la sección de principales archivos para datos preprocesados y software. Las imágenes se alojan en un dominio ftp que contiene todos los archivos históricos hasta la fecha y pueden ser descargados libremente 
+        en: <a className='creditsLink' href='https://soho.nascom.nasa.gov/data/synoptic/sunspots_earth/'>SOHO data index</a>.
+        <br />
+        <br />
+        Una parte de la aplicación contiene un algoritmo escrito en Python que permite descargar las imágenes automáticamente cuando se le da la opción de buscar imágenes en un rango de fechas. 
+        En esta dirección existen dos tipos de imágenes, unas en formato de 512x512 pixeles y otras en formato de 1024x1024 pixeles. 
+        Nosotros usamos en esta aplicación las segundas con mayor resolución.
+        <br />
+        <br />
+        En estos algoritmos que hemos usado y que han sido organizados en la aplicación y también en el repositorio de GitHub <a className='creditsLink' href='https://github.com/sierraporta/SunspotCalc'>SunspotCalc - sierraporta</a> y <a className='creditsLink' href="https://github.com/TheSkyLabTeam/sunspotcalc"> SunSpotCalc - The Skylab Team</a> que conserva el código original escrito en Python para el desarrollo de esta aplicación, se toma en cuenta el día juliano de la toma de la imagen para establecer la posición
+        del Sol y las coordenadas heliográficas del centro del disco solar.
+        </p>
         <p id="loveParagraf">Hecho con ❤️ por The Skylab Team</p>
     </div>
   )
