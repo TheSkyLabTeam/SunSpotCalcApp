@@ -431,8 +431,13 @@ button > a {
         align-items: center;
     }
 
+    .headerSubtitle {
+        font-size: 1rem;
+    }
+
     #SunHeaderImageContainer {
         background-image: url(./Imgs/NASA_SunPhoto.png);
+        opacity: 0.5;
         background-size:cover;
         position: absolute;
         top: 0;
@@ -440,6 +445,10 @@ button > a {
         z-index: 0;
         height: 100vh;
         width: 100%;
+    }
+
+    #goingInstructions {
+        display: none;
     }
 
     /* Styles for the rainbows */
@@ -454,6 +463,7 @@ button > a {
         width: 6em;
         height: 103vh;
         z-index: 2;
+        opacity: 0.5;
     }
 
     #rainbowTwo {
@@ -533,6 +543,7 @@ button > a {
     }
 
     /* Styles for the instruction section and the elements that contains*/
+    
     #instructionSection {
         padding: 1em;
         background-color: var(--darkest-color);
