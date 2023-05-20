@@ -6,6 +6,7 @@ import SunsLogo from './assets/sunspotcalclogo.svg'
 import SunApp from './Components/SunApp'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ReactGA from 'react-ga4';
 AOS.init();
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/Conoce' element={<AboutPage />} />
       </Routes>
+
     </div>
   )
 }
