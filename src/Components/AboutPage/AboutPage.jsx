@@ -31,7 +31,7 @@ export const AboutPage = () => {
         y observar una mancha solar cada día. A primera vista verá que la mancha solar se mueve a través del disco solar, 
         esto es debido a la rotación particular del sol. No necesita hacer muchos cálculos, 
         pero si quiere saber más de cómo esto funciona 
-        lo invitamos a revisar la siguiente dirección: <span id='lighterGreen'><a href='https://www.cosmos.esa.int/documents/519784/1185714/teachers_guide/6fd53676-55b4-415d-9fff-e27f6270ca70'>CESAR - Science Case</a></span><br/>
+        lo invitamos a revisar la siguiente dirección: <span id='lighterGreen'><a href='https://www.cosmos.esa.int/documents/519784/1185714/teachers_guide/6fd53676-55b4-415d-9fff-e27f6270ca70' target='_blank'>CESAR - Science Case</a></span><br/>
         <br/>
         Para cada mancha o grupo solar que puedan seguir, los usuarios deberán calcular la velocidad angular de la mancha o grupo utilizando la siguiente fórmula: 
         </p>
@@ -62,9 +62,9 @@ export const AboutPage = () => {
         <br />
         <h1 className="aboutTile" id="creditsTitle">Creditos</h1>
         <p className="aboutParagraf" id="credistParagraf">
-        Todas la imágenes que obtenemos para el desarrollo de la aplicación provienen de la página web del SOHO (<a className='creditsLink' href='https://soho.nascom.nasa.gov/data/data.html'>SOHO Data</a>) 
+        Todas la imágenes que obtenemos para el desarrollo de la aplicación provienen de la página web del SOHO (<a className='creditsLink' href='https://soho.nascom.nasa.gov/data/data.html' target='_blank'>SOHO Data</a>) 
         en la sección de principales archivos para datos preprocesados y software. Las imágenes se alojan en un dominio ftp que contiene todos los archivos históricos hasta la fecha y pueden ser descargados libremente 
-        en: <a className='creditsLink' href='https://soho.nascom.nasa.gov/data/synoptic/sunspots_earth/'>SOHO data index</a>.
+        en: <a className='creditsLink' href='https://soho.nascom.nasa.gov/data/synoptic/sunspots_earth/' target='_blank'>SOHO data index</a>.
         <br />
         <br />
         La imagen utilizada en este landing fue tomada de Unsplash. Queremos agradecer a la NASA por compartir una imagen tan increible. Puedes encontrar la imagen original y explorar más de su trabajo en <a className='creditsLink' href='https://unsplash.com/s/photos/sunspot'>Nasa - Unplash</a>.
@@ -75,7 +75,7 @@ export const AboutPage = () => {
         Nosotros usamos en esta aplicación las segundas con mayor resolución.
         <br />
         <br />
-        En estos algoritmos que hemos usado y que han sido organizados en la aplicación y también en el repositorio de GitHub <a className='creditsLink' href='https://github.com/sierraporta/SunspotCalc'>SunspotCalc - sierraporta</a> y <a className='creditsLink' href="https://github.com/TheSkyLabTeam/sunspotcalc"> SunSpotCalc - The Skylab Team</a> que conserva el código original escrito en Python para el desarrollo de esta aplicación, se toma en cuenta el día juliano de la toma de la imagen para establecer la posición
+        En estos algoritmos que hemos usado y que han sido organizados en la aplicación y también en el repositorio de GitHub <a className='creditsLink' href='https://github.com/sierraporta/SunspotCalc' target='_blank' >SunspotCalc - sierraporta</a> y <a className='creditsLink' href="https://github.com/TheSkyLabTeam/sunspotcalc" target='_blank'> SunSpotCalc - The Skylab Team</a> que conserva el código original escrito en Python para el desarrollo de esta aplicación, se toma en cuenta el día juliano de la toma de la imagen para establecer la posición
         del Sol y las coordenadas heliográficas del centro del disco solar.
         </p>
         <p id="loveParagraf">Hecho con ❤️ por The Skylab Team</p>
