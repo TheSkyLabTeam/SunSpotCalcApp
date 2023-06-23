@@ -67,6 +67,9 @@ export const AboutPage = () => {
         en: <a className='creditsLink' href='https://soho.nascom.nasa.gov/data/synoptic/sunspots_earth/'>SOHO data index</a>.
         <br />
         <br />
+        La imagen utilizada en este landing fue tomada de Unsplash. Queremos agradecer a la NASA por compartir una imagen tan increible. Puedes encontrar la imagen original y explorar más de su trabajo en <a className='creditsLink' href='https://unsplash.com/s/photos/sunspot'>Nasa - Unplash</a>.
+        <br />
+        <br />
         Una parte de la aplicación contiene un algoritmo escrito en Python que permite descargar las imágenes automáticamente cuando se le da la opción de buscar imágenes en un rango de fechas. 
         En esta dirección existen dos tipos de imágenes, unas en formato de 512x512 pixeles y otras en formato de 1024x1024 pixeles. 
         Nosotros usamos en esta aplicación las segundas con mayor resolución.
