@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Analyzers/ImageAnalyzer'
-import errorBackground from './ErrorImagesForAnalyzers/NoencontradaAmarilla.jpg'
+import errorBackground from './ErrorImagesForAnalyzers/NoEncontradaRojo.jpg'
+import 'aos/dist/aos.css';
+import './ImageAnalyzer.css'
 
-export const ImageAnalyzerTwo = (props) => {
+export const NewAnalyzer = (props) => {
 
     const [posX, setposX] = useState(0);
     const [posY, setposY] = useState(0);
+    const [isPointVisible, setIsPointVisible] = useState(false);
+    const [msgDetail, setMsgDetail] = useState(); // Mensage that appears in the detailsTitle
 
-    // Reference date 
+    // Reference date
 
     let refDate = new Date();
 
@@ -17,19 +21,19 @@ export const ImageAnalyzerTwo = (props) => {
 
     // defining variables for the x and y axis coordinates of the click in each display
 
-    let xOne = 0;
-    let yOne = 0;
-    let coorParameter = 256
-    let R = 221
+    let x_pos = 0;
+    let y_pos = 0;
+    let coorParameter = 256;
+    let R = 221;
 
-    xOne = posX;
-    yOne = posY;
+    x_pos = posX;
+    y_pos = posY;
+
 
     let screenWith = screen.availWidth;
 
     if (screenWith <= 512) {
         R = 129.5;
-        console.log();
         coorParameter = 150;
     }
 
@@ -40,25 +44,24 @@ export const ImageAnalyzerTwo = (props) => {
 
         const getcordd = (e) => {
             e.preventDefault()
-          
+
             let bnds = e.target.getBoundingClientRect();
             let posX = e.clientX - bnds.left - coorParameter;
             let posY = bnds.top - e.clientY + coorParameter;
-            
+
 
             setposX(posX);
             setposY(posY);
-          
-          };
 
-          const element = ref.current;
+        };
 
-          element.addEventListener('click', getcordd);
-      return () => {
-        element.removeEventListener('click', getcordd);
-      };
+        const element = ref.current;
+
+        element.addEventListener('click', getcordd);
+        return () => {
+            element.removeEventListener('click', getcordd);
+        };
     }, []);
-
 
     /* Using date for the calculation and the sun's image that will be displayed*/
     let imageCalculationDate = props.date;
@@ -138,10 +141,10 @@ export const ImageAnalyzerTwo = (props) => {
     let L0 = (eina-sita-100)%360;
 
     /// Function Calculation One //
-    let Xs = xOne;
-    let Ys = yOne;
-    let Pm = 180 - Math.degrees(Math.atan2(xOne, yOne));
-    let Rm = Math.sqrt(xOne**2+yOne**2);
+    let Xs = x_pos;
+    let Ys = y_pos;
+    let Pm = 180 - Math.degrees(Math.atan2(x_pos, y_pos));
+    let Rm = Math.sqrt(x_pos**2+y_pos**2);
     // Calculating Latitude and Longitude of the Sunspot
     let d = 0.54
     let theta = Math.radians(Pm) - Math.radians(P)-Math.PI;
@@ -155,71 +158,70 @@ export const ImageAnalyzerTwo = (props) => {
     let L2 = L0+Math.degrees(Math.asin(Math.sin(Math.radians(P-Pm))*Math.sin(rho2)*Math.cos(Math.radians(B2))));
 
     // Funciones para los estilos
-    const [visibility, setVisibility] = useState(false);
+    const [visibility, setVisibility] = useState('');
 
     // Function for refresh the coordinates
 
     useEffect(() => {
         if (refreshCoords == true) {
-          setposX(0);
-          setposY(0)
+            setposX(0);
+            setposY(0)
         }
         if (refreshCoords == false) {
-          xOne = posX;
-          yOne = posY;
+            x_pos = posX;
+            y_pos = posY;
         }
-      }, [refreshCoords, xOne, yOne]);
+    }, [refreshCoords, x_pos, y_pos]);
 
-    // Function for display or not the alert 
+    // Function for display or not the alert
 
-    // Mensage that appears in the detailsTitle
+    // useEffect(() => {
+    //     if (x_pos == 0) {
+    //         document.getElementById("sendedRed").style.display = "none"
+    //         setMsgDetail('Haz clic en una mancha solar');
+    //         document.getElementById("detailsTitleRed").style.color = "#F6F6F6";
+    //         document.getElementById("subtitleRed").style.display = 'flex'
+    //
+    //
+    //     }
+    //
+    //     if (x_pos != 0) {
+    //         document.getElementById("sendedRed").style.display = "flex"
+    //         setMsgDetail('¡Listo! Ahora baja a la segunda imagen');
+    //         document.getElementById("detailsTitleRed").style.color = "#FF595E"
+    //         document.getElementById("subtitleRed").style.display = 'none'
+    //     }
+    //
+    //
+    // }, [x_pos]);
 
-    const [msgDetail, setMsgDetail] = useState();
 
-    useEffect(() => {
-        if (xOne == 0) {
-          document.getElementById("sendedYellow").style.display = "none";
-          setMsgDetail('Selecciona la misma macha solar');
-          document.getElementById("detailsTitleYellow").style.color = "#F6F6F6";
-          document.getElementById("subtitleYellow").style.display = 'flex'
-          
-        }
-  
-        if (xOne != 0) {
-          document.getElementById("sendedYellow").style.display = "flex"
-          setMsgDetail('¡Listo! Ahora baja a la tercera imagen');
-          document.getElementById("detailsTitleYellow").style.color = "#FFCA3A";
-          document.getElementById("subtitleYellow").style.display = 'none'
-        }
-      
-        
-      }, [xOne]);
-  
-    
     return (
-        <div className='ImageAnalizer' id='AnalizerTwo'>
-            <div id="display-image"
-            className='analizerYellow' 
-            onClick={() => {
-                props.sendingB(B1);
-            }} 
-            ref={ref} 
-            style={ 
-                newDate > refDate?
-                {backgroundImage: `url(${errorBackground})`}
-                :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}
+        <div id="principalContainer">
+            <div id="displayImage"
+                 className='analizerRed'
+                 onClick={() => {
+                     props.sendingB(B1);
+
+                 }}
+                 ref={ref}
+                 style={
+                     newDate > refDate?
+                         {backgroundImage: `url(${errorBackground})`}
+                         :{backgroundImage: `url("https://soho.nascom.nasa.gov/data/synoptic/sunspots/sunspots_1024_${displaiedImageDate}.jpg")`}
 
 
-            }>
-                    <div className="sendedAlert" id="sendedYellow" >Coordenadas enviadas</div>
+                 }>
+                {/*<div className="sendedAlert" id="sendedRed">Coordenadas enviadas</div>*/}
 
             </div>
-            <div className="detailsContainer">
-                <h4 className='titleDetail' id="detailsTitleYellow">{msgDetail}</h4>
-                <p className="detailSubtitle" id='subtitleYellow'>Ahora haz click en la misma macha solar que usaste en el paso anterior y obten las nuevas coordenadas luego que la mancha solar se ha movido.</p>
-                <h5 className="coordinate-details">Coor X: {posX.toFixed(2)} px.</h5>
-                <h5 className="coordinate-details">Coor Y: {posY.toFixed(2)} px.</h5>
+            <div id="infoContainer">
+                <h4>Selecciona una mancha para obtener sus coordenadas</h4>
+                <p>Elige una fecha inicial y haz click en una de las manchas solares disponibles en la imagen para obtener sus coordenadas</p>
+                <h5>Coord X: {posX.toFixed(2)} px.</h5>
+                <h5>Coord Y: {posY.toFixed(2)} px.</h5>
             </div>
-        </div>  
+        </div>
     )
 }
+

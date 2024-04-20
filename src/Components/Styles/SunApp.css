@@ -15,7 +15,7 @@ body {
 .principal-container {
     height: 100vh;
     background-color: var(--darkest-color);
-    padding-left: 8vw;
+    padding: 0 6vw 0 6vw;
 
 }
 

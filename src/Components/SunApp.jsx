@@ -9,6 +9,7 @@ import { ImageAnalyzer } from './Analyzers/ImageAnalyzer'
 import { AppResults } from './AppResults'
 import { AppNavbar } from './AppNavbar'
 import { DateSelector } from './DateSelector/DateSelector'
+import {NewAnalyzer} from "./Analyzers/NewAnalyzer.jsx";
 
 const SunApp = () => {
 
@@ -16,6 +17,8 @@ const SunApp = () => {
   const [BTwo, setBTwo] = useState(0);
   const [BThree, setBThree] = useState(0);
   const [BFour, setBFour] = useState(0);
+  console.log(BOne)
+  console.log(BTwo)
 
   const [globalDate, setglobalDate] = useState(0);
   
@@ -89,33 +92,18 @@ const SunApp = () => {
 
   return (
     <>
-        <div className="mainApp">
-          <DateSelector sendingDate={globalDate => setglobalDate(globalDate)} refreshIt={refreshIt}/>
-          <AppNavbar />
-          <div className="principal-container">
-            <div className="display-image">
-              <h1 className="refnumber" id='refOne' data-aos="fade-left" data-aos-delay="200">0<span id='HighOne'>1</span></h1>
-              <ImageAnalyzer date={dateForOne} sendingB={BOne => setBOne(BOne)} refreshCoords={refreshCoords}/>
-              
-            </div>
-          </div>
-          <div className="principal-container">
-              <h1 className="refnumber" id='refTwo'>0<span id='HighTwo'>2</span></h1>
-              <ImageAnalyzerTwo date={dateForTwo} sendingB={BTwo => setBTwo(BTwo)} refreshCoords={refreshCoords}/>
-          </div>
-          <div className="principal-container">
-              <h1 className="refnumber" id='refThree'>0<span id='HighThree'>3</span></h1>
-              <ImageAnalyzerThree date={dateForThree} sendingB={BThree => setBThree(BThree)} refreshCoords={refreshCoords}/>
-          </div>
-          <div className="principal-container">
-              <h1 className="refnumber" id='refFour'>0<span id='HighFour'>4</span></h1>
-              <ImageAnalyzerFour date={dateForFour} sendingB={BFour => setBFour(BFour)} refreshCoords={refreshCoords}/>
-          </div>
-          <div className="principal-container">
-              <AppResults bValues={[BOne, BTwo, BThree, BFour]} days={[dateNumberForOne, dateNumberForTwo, dateNumberForThree, dateNumberForFour]}/>
-          </div>
+      <div className="mainApp">
+        <DateSelector sendingDate={globalDate => setglobalDate(globalDate)} refreshIt={refreshIt}/>
+        <AppNavbar/>
+        <div className="principal-container">
+            <NewAnalyzer mode={1} date={dateForOne} sendingB={BOne => setBOne(BOne)} refreshCoords={refreshCoords}/>
         </div>
-      </>
+        <div className="principal-container">
+          <AppResults bValues={[BOne, BTwo, BThree, BFour]}
+                      days={[dateNumberForOne, dateNumberForTwo, dateNumberForThree, dateNumberForFour]}/>
+        </div>
+      </div>
+    </>
   )
 }
 
