@@ -1,13 +1,76 @@
-#principalContainer {
+#analyzerPrincipalContainer {
     display: flex;
+    position: relative;
     width: 100%;
-    border: 2px solid white;
     color: white;
 }
 
+#analyzerInfoContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 0 2em 0 2em;
+}
+
+#numIndicator {
+    position: absolute;
+    font-size: 30rem;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
 #displayImage {
-    width: 512px !important;
-    height: 512px !important;
+    position: relative;
+    min-width: 512px !important;
+    min-height: 512px !important;
+    background-size: contain;
+    background-position: center;
+    border-radius: 0.75rem;
+    z-index: 10;
+}
+
+#sendAlertContainer {
+    /*The background color of this container is defined in the jsx code of the component*/
+    position: absolute;
+    width: fit-content;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+}
+
+#analyzerTitleContainer {
+    display: flex;
+    height: 60%;
+}
+
+#analyzerTitle {
+    max-width: 80%;
+    font-size: 2.25rem;
+    z-index: 10;
+}
+
+#analyzerDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 40%;
+}
+
+#analyzerParagraph {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin: 1em 0 1em 0;
+    max-width: 70%;
+    z-index: 10;
+}
+
+.analyzerCoord {
+    font-size: 1.25rem;
+    z-index: 10;
 }
 
 @media screen and (max-width: 1000px) {

@@ -17,8 +17,6 @@ const SunApp = () => {
   const [BTwo, setBTwo] = useState(0);
   const [BThree, setBThree] = useState(0);
   const [BFour, setBFour] = useState(0);
-  console.log(BOne)
-  console.log(BTwo)
 
   const [globalDate, setglobalDate] = useState(0);
   
