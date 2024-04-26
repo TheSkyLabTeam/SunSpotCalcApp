@@ -208,6 +208,8 @@ export const NewAnalyzer = (props) => {
 
     return (
         <div id="analyzerPrincipalContainer">
+            <h1 id={'numIndicator'}><span style={{opacity: 0.1}}>0</span><span
+                style={{color: analyzerMainColor}}>{props.mode}</span></h1>
             <div id="displayImage"
                  onClick={() => {
                      props.sendingB(B1);
@@ -222,7 +224,7 @@ export const NewAnalyzer = (props) => {
                  }}>
 
                 {posX ? (
-                    <div id={'sendAlertContainer'} style={{ backgroundColor: analyzerMainColor }}>
+                    <div id={'sendAlertContainer'} style={{backgroundColor: analyzerMainColor}}>
                         Coordenadas enviadas
                     </div>
                 ) : (
@@ -231,8 +233,6 @@ export const NewAnalyzer = (props) => {
 
             </div>
             <div id="analyzerInfoContainer">
-                <h1 id={'numIndicator'}><span style={{opacity: 0.1}}>0</span><span
-                    style={{color: analyzerMainColor}}>{props.mode}</span></h1>
                 <div id='analyzerTitleContainer'>
                     <h4 id='analyzerTitle'>Selecciona una mancha para obtener sus coordenadas</h4>
                 </div>
