@@ -1,16 +1,17 @@
 import React from "react";
 import "./DetailResult.css";
 
-export const DetailResult = props => {
+export const DetailResult = (props) => {
   let deltaB = props.delta;
   let T = props.T;
   let refNum = props.num;
+  let latitudes = props.l0Values;
 
   /* Posible render variants */
 
   let refImageTitles = [
     "Para imagen #1 y #2",
-    "Para imagen #2 y 3#",
+    "Para imagen #2 y #3",
     "Para imagen #3 y #4"
   ];
 
@@ -45,25 +46,22 @@ export const DetailResult = props => {
         <h4 className="textDetail" id="detailT">
           Rotación del sol: {renderedT.toFixed(2)} días.
         </h4>
-        { renderedDeltaB > 0 ?
-          <h4 className="textDetail" id="angunlarSpeed">
+        {renderedDeltaB > 0 ? (
+          <h4 className="textDetail" id="angularSpeed">
             Velocidad angular: {(renderedDeltaB / renderedT).toFixed(2)} grados por día.
           </h4>
-          : null
-        }
+        ) : null}
+        <h4 className="textDetail">
+          Latitud de la mancha en la imagen #{refNum}: {latitudes[refNum - 1]?.toFixed(2)} grados.
+        </h4>
+        <h4 className="textDetail">
+          Latitud de la mancha en la imagen #{refNum + 1}: {latitudes[refNum]?.toFixed(2)} grados.
+        </h4>
       </div>
       <div className="refImageContainer">
-        <h4 className="textDetail"
-          // style={
-          //   refNum == 1
-          //     ? { color: `#FF595E` }
-          //     : refNum == 2
-          //       ? { color: `#FFCA3A` }
-          //       : refNum == 3 ? { color: `#1982C4` } : { color: `white` }
-          // }
-        >
+        <p className="resultTitle">
           {refImageTitle}
-        </h4>
+        </p>
       </div>
     </div>
   );

@@ -1,33 +1,286 @@
 * {
-    font-family: 'Unbounded', cursive;
-    padding: 0;
-    margin: 0;
+  font-family: "Unbounded", cursive;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    --darkest-color: #262626;
-    --brightest-color: #F6F6F6;
-    --color-red: #FF595E;
-    --color-yellow: #FFCA3A;
-    --color-green: #8AC926;
-    --color-blue: #1982C4;
-  
+  --darkest-color: #262626;
+  --brightest-color: #f6f6f6;
+  --color-red: #ff595e;
+  --color-yellow: #ffca3a;
+  --color-green: #8ac926;
+  --color-blue: #1982c4;
+  --color-purple: #6a4c93;
 }
 
-/* PC version */
-
-/* Styles for the header and the elements that contains*/
+/* Mobile version (base styles) */
 
 #header {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+#SunHeaderImageContainer {
+  background-image: url(./Imgs/NASA_SunPhoto.png);
+  opacity: 0.5;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#goingInstructions {
+  display: none;
+}
+
+.rainbowHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: auto;
+  width: 6em;
+  height: 103vh;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+#rainbowTwo {
+  top: 60vh;
+  height: 3%;
+}
+
+.colorBar {
+  width: 7%;
+  margin: 0.1em;
+  height: 103vh;
+}
+
+#colorRed {
+  background-color: var(--color-red);
+}
+#colorYellow {
+  background-color: var(--color-yellow);
+}
+#colorGreen {
+  background-color: var(--color-green);
+}
+#colorBlue {
+  background-color: var(--color-blue);
+}
+#colorPurple {
+  background-color: var(--color-purple);
+}
+
+#headerPrincipalTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  margin: -5em 0 0 0;
+}
+
+.headerSubtitle {
+  font-weight: 400;
+  font-size: 4.7vw;
+  margin: 0 0 -0.5em 0;
+}
+
+#headerTitle {
+  color: var(--brightest-color);
+  font-weight: 800;
+  font-size: 10.55vw;
+}
+
+#headerParagraph {
+  color: var(--brightest-color);
+  font-weight: 300;
+  font-size: 3.5vw;
+  width: 81%;
+  text-align: center;
+}
+
+.sectionButton {
+  width: 50vw;
+  height: 8vw;
+  margin-top: 2em;
+  font-size: 2.5vw;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#sunspotSection,
+#statsSection,
+#instructionSection {
+  padding: 1em;
+  background-color: var(--darkest-color);
+}
+
+#sunspotSection h1 {
+  color: var(--color-red);
+}
+#statsSection h1 {
+  color: var(--color-yellow);
+}
+#instructionSection h1 {
+  color: var(--color-green);
+}
+#actionTitle {
+  color: var(--color-blue);
+}
+
+#sunspotInfoContainer,
+#statsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  gap: 1em;
+  color: var(--brightest-color);
+}
+
+.infoBlock h3,
+.statItem h3 {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.infoBlock h3 {
+  color: var(--color-red);
+}
+.statItem h3 {
+  color: var(--color-yellow);
+}
+
+.infoBlock p,
+.statItem p {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+#StatsImage {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  margin-top: 1em;
+}
+
+#imageStatDescription {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: var(--brightest-color);
+  text-align: center;
+  opacity: 0.6;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.sectionSubtitle {
+  color: var(--brightest-color);
+  font-size: 1em;
+  font-weight: 300;
+}
+
+#detailInstructionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+#callToActionSection {
+  padding: 3em 1em;
+  display: grid;
+}
+
+.actionRow {
+  width: 100%;
+}
+
+p {
+  color: var(--brightest-color);
+  font-weight: 300;
+}
+
+/* Tablet Styles */
+@media (min-width: 541px) and (max-width: 950px) {
+  #headerPrincipalTextContainer {
+    margin: 0;
+    padding: 2em;
+  }
+
+  #headerSubtitle {
+    font-size: 4.7vw;
+  }
+
+  #headerTitle {
+    font-size: 6vw;
+  }
+
+  #headerParagraph {
+    font-size: 2.5vw;
+    width: 90%;
+  }
+
+  .sectionTitle {
+    font-size: 2.5em;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.2em;
+  }
+
+  .sectionButton {
+    width: 20vw;
+    height: 4vw;
+    font-size: 1.2vw;
+  }
+
+  #instructionSection {
+    padding: 3em;
+  }
+
+  #detailInstructionContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #callToActionSection {
+    padding: 3em;
+  }
+
+  #gridCallToAction {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  #callToActionDescription {
+    max-width: 50vw;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 951px) {
+  /* Restauración del header original para PC */
+  #header {
     background-color: var(--darkest-color);
     max-width: 1920px;
     height: 100vh;
     display: flex;
-    
-    
-}
+  }
 
-#SunHeaderImageContainer {
+  #SunHeaderImageContainer {
     background-image: url(./Imgs/NASA_SunPhoto.png);
     background-size: cover;
     position: absolute;
@@ -36,11 +289,10 @@
     z-index: 0;
     height: 100vh;
     width: 50%;
-}
+    opacity: 1;
+  }
 
-/* Styles for the rainbows */
-
-.rainbowHeader {
+  .rainbowHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,547 +302,167 @@
     width: 12vw;
     height: 100vh;
     z-index: 2;
-}
+    opacity: 1;
+  }
 
-.colorBar {
+  .colorBar {
     width: 2%;
     margin: 0.2em;
     height: 100vh;
     animation-name: rainbowGrow;
     animation-duration: 3000ms;
-}
+  }
 
-@keyframes rainbowGrow {
+  @keyframes rainbowGrow {
     from {
-        height: 0;
+      height: 0;
     }
-
     to {
-        height: 100vh;
+      height: 100vh;
     }
-}
+  }
 
-#colorRed {
-    background-color: #FF595E;
-}
-
-#colorYellow {
-    background-color: #FFCA3A;
-}
-
-#colorGreen {
-    background-color: #8AC926;
-}
-
-#colorBlue {
-    background-color: #1982C4;
-}
-
-#colorPurple {
-    background-color: #6A4C93;
-}
-
-/* Style for the text*/
-
-#headerPrincipalTextContainer {
+  #headerPrincipalTextContainer {
     position: relative;
     display: flex;
     flex-direction: column;
     color: white;
     z-index: 3;
     margin: 35vh 0em 0em 5.5vw;
-}
+    align-items: flex-start;
+  }
 
-.headerSubtitle {
+  .headerSubtitle {
     font-weight: 400;
     font-size: 2.2vw;
     margin: 0 0 0 0;
-}
+  }
 
-#goingInstructions {
-    position: absolute;
-    font-size: 400;
-    font-size: 1.1vw;
-    bottom: 4vw;
-    align-content: center;
-    cursor: pointer;
-    transition: all 300ms;
-}
-
-h6 > a {
-    color: white;
-    transition: all 300ms;
-}
-
-h6 > a:hover {
-    color: var(--color-red);
-    transition: all 300ms;
-}
-
-#headerTitle {
+  #headerTitle {
     color: var(--brightest-color);
     font-weight: 800;
     font-size: 3.2vw;
-}
+  }
 
-#headerParagraph {
+  #headerParagraph {
     color: var(--brightest-color);
     font-weight: 300;
     font-size: 1.3vw;
     width: 25em;
-    
+    text-align: left;
+  }
 
-}
-
-/*Section classes*/
-
-.sectionTitle {
-    font-weight: 800;
-    font-size: 3vw;
-    
-}
-
-.sectionSubtitle {
-    color: var(--brightest-color);
-    margin-top: 1vw;
-    font-size: 1.3vw;
-    font-weight: 300;
-    font-style: normal;
-    
-}
-
-
-.sectionButton {
-    width: 15vw;
-    height: 3.5vw;
-    margin-top: 2em;
-
-    font-size: 1vw;
-    font-weight: 600;
-
+  #goingInstructions {
+    display: block;
+    position: absolute;
+    font-size: 1.1vw;
+    bottom: 4vw;
     cursor: pointer;
-    border-radius: 8px;
-}
+    transition: all 300ms;
+  }
 
-button > a {
+  h6 > a {
     color: white;
-    text-decoration: none;
-}
+    transition: all 300ms;
+  }
 
-.rowCall {
-    min-height: 20em;
-    width: 100%;
-    
-}
-
-
-/* Styles for the instruction section and the elements that contains*/
-#instructionSection {
-    padding: 5.5em 5.5em 0 5.5em;
-    background-color: var(--darkest-color);
-    max-width: 90vw;
-    
-}
-
-#instructionTitle {
+  h6 > a:hover {
     color: var(--color-red);
+  }
 
-}
+  /* Otros estilos para PC */
+  .sectionTitle {
+    font-size: 2.5vw;
+  }
 
-#detailInstructionContainer {
+  .sectionSubtitle {
+    font-size: 1.2vw;
+  }
+
+  .sectionButton {
+    width: 12vw;
+    height: 3vw;
+    font-size: 0.9vw;
+  }
+
+  #sunspotSection,
+  #statsSection {
+    padding: 5em;
+  }
+
+  #sunspotInfoContainer,
+  #statsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .infoBlock,
+  .statItem {
+    width: calc(33.33% - 1.33em);
+  }
+
+  #StatsImage {
+    width: 70%;
+    margin: 2em auto;
+    display: block;
+  }
+
+  #instructionSection {
+    padding: 5em;
+  }
+
+  #detailInstructionContainer {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2em;
-}
+    justify-content: space-between;
+  }
 
-/* Styles for the call to action section and the elements that contains*/
+  #detailInstructionContainer > * {
+    width: calc(50% - 1em);
+  }
 
-#callToActionSection {
-    padding: 3em 5.5em 3em 5.5em;
+  #callToActionSection {
+    padding: 5em;
     display: flex;
+    justify-content: space-between;
+  }
+
+  .actionRow {
+    width: 45%;
+  }
+
+  /* Asegurarse de que todos los párrafos tengan el color más brillante */
+  p {
+    color: var(--brightest-color);
+  }
 }
 
-.actionRow {
-    width: 50%;
-}
-
-#actionTitle {
-    color: var(--color-yellow);
-}
-
-#actionLink {
-    color: var(--color-yellow);
-    text-decoration: underline;
-}
-/* Tablet Version */
-
-@media (max-width: 950px) {
-
-    /* Styles for the header and the elements that contains*/
-
-    #header {
-        background-color: black;
-        width: 100%;
-        height: 100vh;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #SunHeaderImageContainer {
-        background-image: url(./Imgs/NASA_SunPhoto.png);
-        background-size:cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 0;
-        height: 100vh;
-        width: 100%;
-    }
-
-    /* Styles for the rainbows */
-
-    .rainbowHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: auto;
-        width: 6em;
-        height: 103vh;
-        z-index: 2;
-    }
-
-    #rainbowTwo {
-        top: 60vh;
-        height: 3%;
-    }
-
-    .colorBar {
-        width: 7%;
-        margin: 0.1em;
-        height: 103vh;
-    }
-
-    #colorRed {
-        background-color: #FF595E;
-    }
-
-    #colorYellow {
-        background-color: #FFCA3A;
-    }
-
-    #colorGreen {
-        background-color: #8AC926;
-    }
-
-    #colorBlue {
-        background-color: #1982C4;
-    }
-
-    #colorPurple {
-        background-color: #6A4C93;
-    }
-
-    /* Style for the text*/
-
-    #headerPrincipalTextContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        z-index: 2;
-        margin: -5em 0 0 0;
-    }
-
-    #headerSubtitle {
-        font-weight: 400;
-        font-size: 4.7vw;
-        margin: 0 0 -0.5em 0;
-    }
-
-    #headerTitle {
-        color: var(--brightest-color);
-        font-weight: 800;
-        font-size: 10.55vw;
-    }
-
-    #headerParagraph {
-        color: var(--brightest-color);
-        font-weight: 300;
-        font-size: 3.5vw;
-        width: 81%;
-        text-align: center;
-        
-
-    }
-
-    /* Styles for the instruction section and the elements that contains*/
-    #instructionSection {
-        padding: 1em;
-        background-color: var(--darkest-color);
-        
-    }
-
-    .sectionTitle {
-        font-weight: 800;
-        font-size: 2em;
-        
-    }
-
-    #instructionTitle {
-        color: var(--color-red);
-    }
-
-    .sectionSubtitle {
-        color: var(--brightest-color);
-        font-size: 1em;
-        font-weight: 300;
-        
-    }
-
-    #detailInstructionContainer {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2em;
-    }
-
-    .sectionButton {
-        width: 30vw;
-        height: 5vw;
-        margin-top: 2em;
-    
-        font-size: 1.5vw;
-        font-weight: 600;
-    
-        cursor: pointer;
-        border-radius: 8px;
-    }
-
-    /* Styles for the Call to Action section and the elements that contains*/
-
-    #callToActionSection {
-        padding: 5.5em 5.5em 0 1em;
-        background-color: var(--darkest-color);
-        max-width: 80vw;
-    }
-
-    #callTitle {
-        color: var(--color-yellow);
-    }
-
-    #gridCallToAction {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #callToActionDescription {
-        margin-top: 2em;
-        max-width: 70vw;
-        font-weight: 400;
-    }
-
-    #callToActionButton {
-        background-color: var(--darkest-color);
-        color: white;
-        border: 0.1em solid #FFCA3A;
-        transition: all 300ms;
-    }
-
-    #callToActionButton:hover {
-        background-color: var(--color-yellow);
-        color: var(--darkest-color);
-        border: 0;
-        transition: all 300ms;
-    }
-
-    #gridCallToAction {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    
-}
-
-
-/* Mobile version */
-
-@media (max-width: 540px) {
-
-    /* Styles for the header and the elements that contains*/
-
-    #header {
-        background-color: black;
-        width: 100%;
-        height: 100vh;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .headerSubtitle {
-        font-size: 1rem;
-    }
-
-    #SunHeaderImageContainer {
-        background-image: url(./Imgs/NASA_SunPhoto.png);
-        opacity: 0.5;
-        background-size:cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 0;
-        height: 100vh;
-        width: 100%;
-    }
-
-    #goingInstructions {
-        display: none;
-    }
-
-    /* Styles for the rainbows */
-
-    .rainbowHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: auto;
-        width: 6em;
-        height: 103vh;
-        z-index: 2;
-        opacity: 0.5;
-    }
-
-    #rainbowTwo {
-        top: 60vh;
-        height: 3%;
-    }
-
-    .colorBar {
-        width: 7%;
-        margin: 0.1em;
-        height: 103vh;
-    }
-
-    #colorRed {
-        background-color: #FF595E;
-    }
-
-    #colorYellow {
-        background-color: #FFCA3A;
-    }
-
-    #colorGreen {
-        background-color: #8AC926;
-    }
-
-    #colorBlue {
-        background-color: #1982C4;
-    }
-
-    #colorPurple {
-        background-color: #6A4C93;
-    }
-
-    /* Style for the text*/
-
-    #headerPrincipalTextContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        z-index: 2;
-        margin: -5em 0 0 0;
-    }
-
-    #headerSubtitle {
-        font-weight: 400;
-        font-size: 4.7vw;
-        margin: 0 0 -0.5em 0;
-    }
-
-    #headerTitle {
-        color: var(--brightest-color);
-        font-weight: 800;
-        font-size: 10.55vw;
-    }
-
-    #headerParagraph {
-        color: var(--brightest-color);
-        font-weight: 300;
-        font-size: 3.5vw;
-        width: 81%;
-        text-align: center;
-        
-
-    }
-
-    .sectionButton {
-        width: 50vw;
-        height: 8vw;
-        margin-top: 2em;
-    
-        font-size: 2.5vw;
-        font-weight: 600;
-    
-        cursor: pointer;
-        border-radius: 8px;
-    }
-
-    /* Styles for the instruction section and the elements that contains*/
-    
-    #instructionSection {
-        padding: 1em;
-        background-color: var(--darkest-color);
-        
-    }
-
-    .sectionTitle {
-        font-weight: 800;
-        font-size: 2em;
-        
-    }
-
-    #instructionTitle {
-        color: var(--color-red);
-    }
-
-    .sectionSubtitle {
-        color: var(--brightest-color);
-        font-size: 1em;
-        font-weight: 300;
-        
-    }
-
-    #detailInstructionContainer {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 2em;
-    }
-
-    /* Styles for the call to action section and the elements that contains*/
-
-    #callToActionSection {
-        padding: 3em 1em 3em 1em;
-        display: grid;
-    }
-
-    .actionRow {
-        width: 100%;
-    }
-
-    #actionTitle {
-        color: var(--color-yellow);
-    }
-
-    #actionLink {
-        color: var(--color-yellow);
-        text-decoration: underline;
-    }
-
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+  #sunspotSection,
+  #statsSection,
+  #instructionSection {
+    margin: 10vh 0 10vh 0;
+    padding: 0 4.5em 0 4.5em;
+    background-color: var(--darkest-color);
+  }
+
+  p {
+    color: var(--brightest-color);
+  }
+
+  #sunspotInfoContainer,
+  #statsContainer {
+    display: flex;
+    margin: 1.5em 0 1.5em 0;
+    gap: 1em;
+    color: var(--brightest-color);
+  }
+
+  #detailInstructionContainer {
+    width: 100%;
+    display: grid;
+  }
 }

@@ -1,165 +1,204 @@
 :root {
-    --darkest-color: #262626;
-    --brightest-color: #F6F6F6;
-    --color-red: #FF595E;
-    --color-yellow: #FFCA3A;
-    --color-green: #8AC926;
-    --color-blue: #1982C4;
+  --darkest-color: #262626;
+  --brightest-color: #f6f6f6;
+  --color-red: #ff595e;
+  --color-yellow: #ffca3a;
+  --color-green: #8ac926;
+  --color-blue: #1982c4;
 }
 
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#resultTitleSection {
+  color: var(--brightest-color);
+  margin-bottom: 1em;
 }
 
 /* --- General Styles --- */
 .resultContainer {
-    width: 100%;
-    height: 100%;
-    border: 2px solid #525252;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--darkest-color);
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #525252;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--darkest-color);
+  overflow: hidden;
 }
 
 .resultTitle {
-    width: 100%;
-    height: 10%;
-    background-color: #525252;
-    color: var(--brightest-color);
-    font-size: 1.2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 10%;
+  background-color: #525252;
+  color: var(--brightest-color);
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resultContent {
-    height: 90%;
-    padding: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: 90%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .resultsContainer {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --- First Column Layout --- */
 #firstResultCol {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40vh;
+  gap: 0.5em;
+  margin-bottom: 1em;
 }
 
-/* --- Coordinates Container --- */
-#coordsResumeContainer {
-    width: 100%;
-    height: 100%;
-    border: 2px solid #525252;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-#coordsResumeTitleContainer {
-    width: 100%;
-    height: 10%;
-    background-color: #525252;
-    color: var(--brightest-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#coordsResumeDetailsContainer {
-    height: 90%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Por defecto, organiza en 2x2 */
-    gap: 0.5em;
-    padding: 1em;
+#coordContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  height: 100%;
 }
 
 .coordItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #525252;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #525252;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
 }
 
 .coordItem h4 {
-    font-size: 1rem;
-    color: #333;
+  font-size: 1rem;
+  color: #333;
 }
 
 .coordItem p {
-    margin: 4px 0;
-    font-size: 0.875rem;
-    color: var(--brightest-color);
+  margin: 4px 0;
+  font-size: 0.875rem;
+  color: var(--brightest-color);
 }
 
 /* --- Second Column Layout --- */
-#colResult2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 0.5em;
+#secondResultCol {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
 }
 
 /* --- Day Result Text --- */
 #dayIntResult {
-    color: var(--brightest-color);
-    font-size: 10vw;
-    font-weight: bold;
-    margin: -1.5vw 3vw 0 3vw;
+  color: var(--brightest-color);
+  font-size: 10vw;
+  font-weight: bold;
 }
 
 #dayFloatResult {
-    color: var(--brightest-color);
-    font-size: 3vw;
-    margin: -2vw 3vw 0 3vw;
+  color: var(--brightest-color);
+  font-size: 3vw;
+  margin: -2vw 3vw 0 3vw;
 }
 
 #textDays {
-    font-size: 2em;
-    color: var(--color-green);
+  font-size: 2em;
+  color: var(--color-green);
 }
 
 /* --- Media Queries --- */
 @media (max-width: 850px) {
+  #resultTitle {
+    margin-bottom: 1em;
+    color: var(--brightest-color);
+  }
 
-    #resultTitle {
-        margin-bottom: 1em;
-        color: var(--brightest-color);
-    }
+  #firstResultCol {
+    flex-direction: column;
+  }
 
-    #firstResultCol {
-        flex-direction: column;
-    }
+  #colResult2 {
+    flex-direction: column;
+  }
 
-    #colResult2 {
-        flex-direction: column;
-    }
+  /* En dispositivos móviles, apila las coordenadas */
+  #coordsResumeDetailsContainer {
+    grid-template-columns: 1fr;
+  }
+}
 
-    /* En dispositivos móviles, apila las coordenadas */
-    #coordsResumeDetailsContainer {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 600px) {
+  /* General Styles */
+  .resultTitle {
+    height: fit-content;
+    font-size: 0.875rem;
+  }
+
+  /* Total days section */
+  #textDays {
+    font-size: 1rem;
+  }
+
+  #dayIntResult {
+    font-size: 3.75rem;
+  }
+
+  #dayFloatResult {
+    font-size: 1rem;
+  }
+
+  #firstResultCol {
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  /* --- Coordinates Container --- */
+  #coordContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+  }
+
+  .coordItem {
+    min-height: 15vh;
+  }
+
+  .coordItem h4 {
+    font-size: 0.875rem;
+    color: #333;
+  }
+
+  .coordItem p {
+    margin: 4px 0;
+    font-size: 1rem;
+    color: var(--brightest-color);
+  }
+
+  #secondResultCol {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

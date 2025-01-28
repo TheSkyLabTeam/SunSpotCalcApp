@@ -200,7 +200,7 @@
 
     #numIndicator {
         position: absolute;
-        font-size: 20rem;
+        font-size: 10rem;
         top: 0%;
         right: 0%;
         transform: translateY(-18%);
