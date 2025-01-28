@@ -12,6 +12,7 @@ const SunApp = () => {
   const [BThree, setBThree] = useState(0);
   const [BFour, setBFour] = useState(0);
   const [globalDate, setglobalDate] = useState(0);
+  const [L0Values, setL0Values] = useState([0, 0, 0, 0]);
   const [positions, setPositions] = useState([
     { posX: 0, posY: 0 },
     { posX: 0, posY: 0 },
@@ -23,6 +24,12 @@ const SunApp = () => {
   const updatePosition = (index, newPosition) => {
     setPositions(prev =>
       prev.map((pos, i) => (i === index ? newPosition : pos))
+    );
+  };
+
+  const updateL0 = (index, newL0) => {
+    setL0Values(prev =>
+      prev.map((L0, i) => (i === index ? newL0 : L0))
     );
   };
   
@@ -74,22 +81,19 @@ const SunApp = () => {
     setBThree(0);
     setBFour(0);
     setglobalDate(0);
-    setRefreshCoords(true);
+    setL0Values([0, 0, 0, 0]);
   };
 
-  useEffect(
-    () => {
-      if (refreshCoords) {
-        setBOne(0);
-        setBTwo(0);
-        setBThree(0);
-        setBFour(0);
-        setglobalDate(0);
-        setRefreshCoords(false); // desactivamos la función
-      }
-    },
-    [refreshCoords]
-  );
+  useEffect(() => {
+    if (refreshCoords) {
+      setBOne(0);
+      setBTwo(0);
+      setBThree(0);
+      setBFour(0);
+      setglobalDate(0);
+      setRefreshCoords(false);
+    }
+  }, [refreshCoords]);
 
   return (
     <main>
@@ -105,6 +109,7 @@ const SunApp = () => {
             date={dateForOne}
             sendingB={BOne => setBOne(BOne)}
             sendPosition={position => updatePosition(0, position)}
+            sendL0={L0 => updateL0(0, L0)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -114,6 +119,7 @@ const SunApp = () => {
             date={dateForTwo}
             sendingB={BTwo => setBTwo(BTwo)}
             sendPosition={position => updatePosition(1, position)}
+            sendL0={L0 => updateL0(1, L0)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -123,6 +129,7 @@ const SunApp = () => {
             date={dateForThree}
             sendingB={BThree => setBThree(BThree)}
             sendPosition={position => updatePosition(2, position)}
+            sendL0={L0 => updateL0(2, L0)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -132,6 +139,7 @@ const SunApp = () => {
             date={dateForFour}
             sendingB={BFour => setBFour(BFour)}
             sendPosition={position => updatePosition(3, position)}
+            sendL0={L0 => updateL0(3, L0)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -145,6 +153,7 @@ const SunApp = () => {
               dateNumberForFour
             ]}
             positions={positions}
+            l0values={L0Values}
           />
         </div>
       </div>

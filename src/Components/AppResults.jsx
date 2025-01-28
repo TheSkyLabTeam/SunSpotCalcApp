@@ -26,6 +26,7 @@ export const AppResults = props => {
   let BCalc = props.bValues;
   let DAYS = props.days;
   let positions = props.positions;
+  let L0Values = props.l0values;
 
   let delta = diff(BCalc);
   let deltaDays = diff(DAYS);
@@ -98,6 +99,7 @@ export const AppResults = props => {
               num={num}
               delta={delta}
               T={T}
+              l0Values={L0Values?.slice(num - 1, num + 1)}
             />
           )}
         </div>
