@@ -12,35 +12,16 @@ body {
 }
 
 .principal-container {
-  height: 100vh;
+  height: fit-content;
   background-color: var(--darkest-color);
-  padding: 0 6vw 0 6vw;
+  padding: 5vh 6vw 5vh 6vw;
   margin-bottom: 8em;
-}
-
-.ImageAnalizer {
-  padding: 0em 0vw 0vw 0;
-  display: flex;
-  flex-direction: row;
 }
 
 .pointer {
   width: 5px;
   height: 5px;
   background-color: red;
-}
-
-/* Styles for the display of the image */
-#display-image {
-  width: 512px;
-  height: 512px;
-
-  border-radius: 10px;
-  background-size: cover;
-
-  display: flex;
-  justify-content: end;
-  z-index: 1;
 }
 
 
@@ -86,26 +67,3 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/* Tablet version */
-@media (max-width: 1000px) {
-  .ImageAnalizer {
-    padding: 0em 0vw 0vw 0;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 600px) {
-/* Styles for the display of the image */
-  #display-image {
-    width: 300px;
-    height: 300px;
-
-    border-radius: 10px;
-    background-size: cover;
-
-    display: flex;
-    justify-content: end;
-    z-index: 1;
-  }
-}

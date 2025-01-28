@@ -1,9 +1,8 @@
 import React from "react";
-import "./Analyzers/ImageAnalyzer";
-import { DetailResult } from "./DetailResult/DetailResult";
 import "./Styles/AppResults.css";
+import { DetailResult } from "./DetailResult/DetailResult";
 
-export const AppResults = (props) => {
+export const AppResults = props => {
   let T = [0, 0, 0];
 
   // Utility functions
@@ -16,7 +15,8 @@ export const AppResults = (props) => {
   }
 
   function divideArrays(array1, array2) {
-    if (array1.length !== array2.length) throw new Error("Arrays must match in length");
+    if (array1.length !== array2.length)
+      throw new Error("Arrays must match in length");
     return array1.map((val, i) => {
       if (array2[i] === 0) throw new Error("Cannot divide by zero");
       return val / array2[i];
@@ -25,15 +25,30 @@ export const AppResults = (props) => {
 
   let BCalc = props.bValues;
   let DAYS = props.days;
+  let positions = props.positions;
 
   let delta = diff(BCalc);
   let deltaDays = diff(DAYS);
 
-  let multipliedDAYS = deltaDays.map((element) => element * 360);
+  let multipliedDAYS = deltaDays.map(element => element * 360);
 
-  if (multipliedDAYS.every((e) => e !== 0) && delta.every((e) => e !== 0)) {
+  if (multipliedDAYS.every(e => e !== 0) && delta.every(e => e !== 0)) {
     T = divideArrays(multipliedDAYS, delta);
   }
+
+
+  const getColor = num => {
+    switch (num) {
+      case 1:
+        return "var(--color-red)";
+      case 2:
+        return "var(--color-yellow)";
+      case 3:
+        return "var(--color-green)";
+      default:
+        return "var(--color-blue)";
+    }
+  };
 
   return (
     <div>
@@ -42,33 +57,49 @@ export const AppResults = (props) => {
         <div id="firstResultCol">
           {/* Day Result Container */}
           <div className="resultContainer">
-            <div className="resultTitle">Rotación promedio del sol</div>
             <div className="resultContent">
-              <h1 id="dayIntResult">{parseInt(mean(T))}</h1>
+              <h1 id="dayIntResult">
+                {parseInt(mean(T))}
+              </h1>
               <h4 id="dayFloatResult">
                 {(-Math.trunc(mean(T)) + mean(T)).toFixed(2).replace(0, "")}
               </h4>
               <h4 id="textDays">Días</h4>
             </div>
+            <div className="resultTitle">Rotación promedio del sol</div>
           </div>
 
           {/* Coordenadas Container */}
           <div id="coordsResumeContainer">
+            <div id="coordsResumeDetailsContainer">
+              {positions && positions.map((pos, index) =>
+                <div className="coordItem" key={index + 1}>
+                  <h4 style={{ color: getColor(index + 1) }}>
+                    Coordenada {index + 1}
+                  </h4>
+                  <p>
+                    Valor X: {pos.posX.toFixed(2)}
+                  </p>
+                  <p>
+                    Valor Y: {pos.posY.toFixed(2)}
+                  </p>
+                </div>
+              )}
+            </div>
             <div id="coordsResumeTitleContainer">Coordenadas</div>
-            <div id="coordsResumeDetailsContainer"></div>
           </div>
         </div>
 
         {/* Detailed Results */}
         <div className="resultCol" id="colResult2">
-          {[1, 2, 3].map((num) => (
-            <div className="resultContainer" key={num}>
-              <div className="resultTitle">Detalle Resultado {num}</div>
-              <div className="resultContent">
-                <DetailResult num={num} delta={delta} T={T} />
-              </div>
-            </div>
-          ))}
+          {[1, 2, 3].map(num =>
+            <DetailResult
+              key={num}
+              num={num}
+              delta={delta}
+              T={T}
+            />
+          )}
         </div>
       </div>
     </div>

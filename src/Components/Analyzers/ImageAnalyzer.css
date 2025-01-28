@@ -23,13 +23,15 @@
 
 #displayImage {
     position: relative;
-    min-width: 512px !important;
-    min-height: 512px !important;
+    width: 100%;
+    max-width: 512px;
+    aspect-ratio: 1 / 1;
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     border-radius: 0.75rem;
     z-index: 10;
-}
+  }
 
 #sendAlertContainer {
     /*The background color of this container is defined in the jsx code of the component*/
@@ -153,8 +155,7 @@
 
     #displayImage {
         position: relative;
-        width: 512px !important;
-        height: 512px !important;
+        max-width: 100%;
         border-radius: 0.75rem;
         z-index: 10;
     }
@@ -182,7 +183,7 @@
 }
 
 /*Media screen for 768px displays*/
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
     #analyzerPrincipalContainer {
         display: flex;
         flex-direction: column;
@@ -208,8 +209,7 @@
 
     #displayImage {
         position: relative;
-        width: 300px !important;
-        height: 300px !important;
+        max-width: 300px !important;
         border-radius: 0.75rem;
         z-index: 10;
     }

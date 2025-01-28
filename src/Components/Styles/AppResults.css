@@ -7,13 +7,14 @@
     --color-blue: #1982C4;
 }
 
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General container for all result boxes */
+/* --- General Styles --- */
 .resultContainer {
     width: 100%;
     height: 100%;
@@ -21,26 +22,21 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background-color: #262626;
+    background-color: var(--darkest-color);
+    overflow: hidden;
 }
 
-/* Title section for result boxes */
 .resultTitle {
     width: 100%;
     height: 10%;
     background-color: #525252;
     color: var(--brightest-color);
-    font-size: 1.25vw;
-    font-weight: bold;
+    font-size: 1.2vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #848484;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
-/* Content section for result boxes */
 .resultContent {
     height: 90%;
     padding: 1em;
@@ -50,15 +46,15 @@
     flex-direction: column;
 }
 
-/* Results container */
 .resultsContainer {
     width: 100%;
     height: 80vh;
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
-/* First column layout */
+/* --- First Column Layout --- */
 #firstResultCol {
     display: flex;
     flex-direction: row;
@@ -66,7 +62,7 @@
     gap: 0.5em;
 }
 
-/* Coordinates container */
+/* --- Coordinates Container --- */
 #coordsResumeContainer {
     width: 100%;
     height: 100%;
@@ -78,30 +74,56 @@
 
 #coordsResumeTitleContainer {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 10%;
     background-color: #525252;
     color: var(--brightest-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #coordsResumeDetailsContainer {
     height: 90%;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Por defecto, organiza en 2x2 */
+    gap: 0.5em;
+    padding: 1em;
 }
 
-/* Second column layout */
+.coordItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #525252;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coordItem h4 {
+    font-size: 1rem;
+    color: #333;
+}
+
+.coordItem p {
+    margin: 4px 0;
+    font-size: 0.875rem;
+    color: var(--brightest-color);
+}
+
+/* --- Second Column Layout --- */
 #colResult2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 1em;
+    gap: 0.5em;
 }
 
-/* Day result text styles */
+/* --- Day Result Text --- */
 #dayIntResult {
     color: var(--brightest-color);
     font-size: 10vw;
@@ -120,29 +142,24 @@
     color: var(--color-green);
 }
 
-/* Media queries */
-@media (max-width: 1000px) {
+/* --- Media Queries --- */
+@media (max-width: 850px) {
+
+    #resultTitle {
+        margin-bottom: 1em;
+        color: var(--brightest-color);
+    }
+
+    #firstResultCol {
+        flex-direction: column;
+    }
+
     #colResult2 {
         flex-direction: column;
     }
 
-    .resultCol {
-        width: 80vw;
-        height: 40vh;
-        margin-top: 1em;
-    }
-}
-
-@media (max-width: 600px) {
-    .resultsContainer {
-        width: 100%;
-        height: 130vh;
-        flex-direction: column;
-    }
-
-    .resultCol {
-        width: 80vw;
-        height: 60vh;
-        margin-top: 1em;
+    /* En dispositivos móviles, apila las coordenadas */
+    #coordsResumeDetailsContainer {
+        grid-template-columns: 1fr;
     }
 }

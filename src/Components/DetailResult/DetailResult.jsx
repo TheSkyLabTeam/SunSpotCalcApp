@@ -1,19 +1,22 @@
-import React from 'react'
-import './DetailResult.css'
+import React from "react";
+import "./DetailResult.css";
 
-export const DetailResult = (props) => {
-
+export const DetailResult = props => {
   let deltaB = props.delta;
   let T = props.T;
   let refNum = props.num;
 
   /* Posible render variants */
 
-  let refImageTitles = ['Para imagen #1 y #2', "Para imagen #2 y 3#", "Para imagen #3 y #4"];
+  let refImageTitles = [
+    "Para imagen #1 y #2",
+    "Para imagen #2 y 3#",
+    "Para imagen #3 y #4"
+  ];
 
-  let refImageTitle = '';
+  let refImageTitle = "";
   let renderedDeltaB = 0;
-  let renderedT = 0
+  let renderedT = 0;
 
   /* Conditionals for set the variants */
 
@@ -34,37 +37,34 @@ export const DetailResult = (props) => {
   }
 
   return (
-    <div id="DetailResult"
-        style={
-            refNum == 1 ?
-            {border: `2px solid #FF595E`,
-             borderBottom: `5px solid #FF595E`} :
-            refNum == 2 ?
-            {border: `2px solid #FFCA3A`,
-             borderBottom: `5px solid #FFCA3A`} :
-            refNum == 3 ?
-            {border: `2px solid #1982C4`,
-             borderBottom: `5px solid #1982C4`} :
-             {border: `0px`}
-            
-        }>
-        <h1 className="refImageTitle"
-            style={
-                refNum == 1 ?
-                {color: `#FF595E`} :
-                refNum == 2 ?
-                {color: `#FFCA3A`} :
-                refNum == 3 ?
-                {color: `#1982C4`}:
-                {color: `white`}
-                
-        }>
-            {refImageTitle}
-        </h1>
-        <div className="detailParagraph">
-            <h4 className='textDetail' id="detailDeltaB">ΔB es: {renderedDeltaB.toFixed(2)} grados.</h4>
-            <h4 className='textDetail' id="detailT">Rotación del sol: {renderedT.toFixed(2)} días.</h4>
-        </div>
+    <div id="DetailResult">
+      <div className="detailParagraph">
+        <h4 className="textDetail" id="detailDeltaB">
+          ΔB es: {renderedDeltaB.toFixed(2)} grados.
+        </h4>
+        <h4 className="textDetail" id="detailT">
+          Rotación del sol: {renderedT.toFixed(2)} días.
+        </h4>
+        { renderedDeltaB > 0 ?
+          <h4 className="textDetail" id="angunlarSpeed">
+            Velocidad angular: {(renderedDeltaB / renderedT).toFixed(2)} grados por día.
+          </h4>
+          : null
+        }
+      </div>
+      <div className="refImageContainer">
+        <h4 className="textDetail"
+          // style={
+          //   refNum == 1
+          //     ? { color: `#FF595E` }
+          //     : refNum == 2
+          //       ? { color: `#FFCA3A` }
+          //       : refNum == 3 ? { color: `#1982C4` } : { color: `white` }
+          // }
+        >
+          {refImageTitle}
+        </h4>
+      </div>
     </div>
-  )
-}
+  );
+};

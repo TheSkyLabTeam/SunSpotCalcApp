@@ -11,9 +11,21 @@ const SunApp = () => {
   const [BTwo, setBTwo] = useState(0);
   const [BThree, setBThree] = useState(0);
   const [BFour, setBFour] = useState(0);
-
   const [globalDate, setglobalDate] = useState(0);
-  console.log(BOne, BTwo, BThree, BFour);
+  const [positions, setPositions] = useState([
+    { posX: 0, posY: 0 },
+    { posX: 0, posY: 0 },
+    { posX: 0, posY: 0 },
+    { posX: 0, posY: 0 }
+  ]);
+
+  // Function to update positions
+  const updatePosition = (index, newPosition) => {
+    setPositions(prev =>
+      prev.map((pos, i) => (i === index ? newPosition : pos))
+    );
+  };
+  
 
   // Function for add days
   const addDays = (str, num) => {
@@ -86,12 +98,13 @@ const SunApp = () => {
           sendingDate={globalDate => setglobalDate(globalDate)}
           refreshIt={refreshIt}
         />
-        <AppNavbar />
+
         <div className="principal-container">
           <NewAnalyzer
             mode={1}
             date={dateForOne}
             sendingB={BOne => setBOne(BOne)}
+            sendPosition={position => updatePosition(0, position)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -100,6 +113,7 @@ const SunApp = () => {
             mode={2}
             date={dateForTwo}
             sendingB={BTwo => setBTwo(BTwo)}
+            sendPosition={position => updatePosition(1, position)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -108,6 +122,7 @@ const SunApp = () => {
             mode={3}
             date={dateForThree}
             sendingB={BThree => setBThree(BThree)}
+            sendPosition={position => updatePosition(2, position)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -116,6 +131,7 @@ const SunApp = () => {
             mode={4}
             date={dateForFour}
             sendingB={BFour => setBFour(BFour)}
+            sendPosition={position => updatePosition(3, position)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -128,6 +144,7 @@ const SunApp = () => {
               dateNumberForThree,
               dateNumberForFour
             ]}
+            positions={positions}
           />
         </div>
       </div>
