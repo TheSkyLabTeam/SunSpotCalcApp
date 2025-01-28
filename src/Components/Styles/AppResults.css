@@ -5,74 +5,103 @@
     --color-yellow: #FFCA3A;
     --color-green: #8AC926;
     --color-blue: #1982C4;
-  
 }
 
-
-#resultTitle {
-    font-size: 4vw;
-    font-weight: 600;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* General container for all result boxes */
+.resultContainer {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #525252;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+}
 
-/* Styles fo the result container */
+/* Title section for result boxes */
+.resultTitle {
+    width: 100%;
+    height: 10%;
+    background-color: #525252;
+    color: var(--brightest-color);
+    font-size: 1.25vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #848484;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
+/* Content section for result boxes */
+.resultContent {
+    height: 90%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+/* Results container */
 .resultsContainer {
     width: 100%;
     height: 80vh;
     display: flex;
     flex-direction: column;
-    
 }
 
-
-.resultCol {
-    width: 80vw;
-    height: 48%;
-    margin-top: 1em;
-}
-
-
-#colResult1 {
-    width: 85.5%;
-    border: 2px solid var(--color-green);
-    border-bottom: 5px solid var(--color-green);
-    border-radius: 10px;
+/* First column layout */
+#firstResultCol {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    gap: 0.5em;
 }
 
+/* Coordinates container */
+#coordsResumeContainer {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #525252;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
 
+#coordsResumeTitleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    background-color: #525252;
+    color: var(--brightest-color);
+}
+
+#coordsResumeDetailsContainer {
+    height: 90%;
+    width: 100%;
+}
+
+/* Second column layout */
 #colResult2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-/* Styles for the days results*/
-
-#ContainerDayTitleResult {
-    width: 70%;
-}
-
-.titleResult {
-    color: var(--brightest-color);
-    font-size: 1.25vw;
-    margin: 1em;
-}
-
-#ContainerDayDetailResult {
-
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-
+    width: 100%;
+    gap: 1em;
 }
 
-
+/* Day result text styles */
 #dayIntResult {
     color: var(--brightest-color);
     font-size: 10vw;
@@ -80,47 +109,20 @@
     margin: -1.5vw 3vw 0 3vw;
 }
 
-
 #dayFloatResult {
     color: var(--brightest-color);
     font-size: 3vw;
     margin: -2vw 3vw 0 3vw;
 }
 
-
 #textDays {
     font-size: 2em;
     color: var(--color-green);
 }
 
-
-.resultDelta {
-    color: white;
-    font-size: 1.2vw;
-    font-weight: 300;
-    margin: 1vw 0 0 0;
-}
-
-.highlighterRed {
-    color: var(--color-red);
-}
-
-.highlighterYellow {
-    color: var(--color-yellow);
-}
-
-.highlighterGreen {
-    color: var(--color-green);
-}
-
-.highlighterBlue {
-    color: var(--color-blue);
-}
-
+/* Media queries */
 @media (max-width: 1000px) {
-
     #colResult2 {
-        display: flex;
         flex-direction: column;
     }
 
@@ -129,61 +131,13 @@
         height: 40vh;
         margin-top: 1em;
     }
-
-    /* Styles for the days results*/
-
-    #colResult1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #ContainerDayTitleResult {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .titleResult {
-        color: var(--brightest-color);
-        font-size: 4vw;
-    
-    }
-
-    #dayIntResult {
-        color: var(--brightest-color);
-        font-size: 20vw;
-        font-weight: bold;
-        margin: -1.5vw 3vw 0 3vw;
-    }
-    
-    
-    #dayFloatResult {
-        color: var(--brightest-color);
-        font-size: 6vw;
-        margin: -4vw 3vw 0 3vw;
-    }
-    
-    
-    #textDays {
-        font-size: 2em;
-        color: var(--color-green);
-    }
 }
 
 @media (max-width: 600px) {
     .resultsContainer {
         width: 100%;
         height: 130vh;
-        display: flex;
         flex-direction: column;
-        
-    }
-
-    #resultTitle {
-        font-size: 7vw;
-        font-weight: 600;
     }
 
     .resultCol {
@@ -191,6 +145,4 @@
         height: 60vh;
         margin-top: 1em;
     }
-    
-
 }

@@ -3,7 +3,6 @@ import "../Analyzers/ImageAnalyzer";
 import errorBackground from "./ErrorImagesForAnalyzers/NoEncontradaRojo.jpg";
 import "aos/dist/aos.css";
 import "./ImageAnalyzer.css";
-import { div } from "@tensorflow/tfjs";
 
 export const NewAnalyzer = props => {
   const [posX, setposX] = useState(0);

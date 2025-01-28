@@ -1,11 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Styles/SunApp.css";
 import "aos/dist/aos.css";
-
-import { ImageAnalyzerTwo } from "./Analyzers/ImageAnalyzerTwo";
-import { ImageAnalyzerThree } from "./Analyzers/ImageAnalyzerThree";
-import { ImageAnalyzerFour } from "./Analyzers/ImageAnalyzerFour";
-import { ImageAnalyzer } from "./Analyzers/ImageAnalyzer";
 import { AppResults } from "./AppResults";
 import { AppNavbar } from "./AppNavbar";
 import { DateSelector } from "./DateSelector/DateSelector";
@@ -18,6 +13,7 @@ const SunApp = () => {
   const [BFour, setBFour] = useState(0);
 
   const [globalDate, setglobalDate] = useState(0);
+  console.log(BOne, BTwo, BThree, BFour);
 
   // Function for add days
   const addDays = (str, num) => {
@@ -111,7 +107,7 @@ const SunApp = () => {
           <NewAnalyzer
             mode={3}
             date={dateForThree}
-            sendingB={BThree => setBTwo(BThree)}
+            sendingB={BThree => setBThree(BThree)}
             refreshCoords={refreshCoords}
           />
         </div>
@@ -119,7 +115,7 @@ const SunApp = () => {
           <NewAnalyzer
             mode={4}
             date={dateForFour}
-            sendingB={BFour => setBTwo(BFour)}
+            sendingB={BFour => setBFour(BFour)}
             refreshCoords={refreshCoords}
           />
         </div>
