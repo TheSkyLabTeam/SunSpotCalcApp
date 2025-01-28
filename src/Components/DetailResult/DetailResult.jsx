@@ -41,21 +41,21 @@ export const DetailResult = (props) => {
     <div id="DetailResult">
       <div className="detailParagraph">
         <h4 className="textDetail" id="detailDeltaB">
-          ΔB es: {renderedDeltaB.toFixed(2)} grados.
+          ΔB: {renderedDeltaB.toFixed(2)} grados.
         </h4>
         <h4 className="textDetail" id="detailT">
           Rotación del sol: {renderedT.toFixed(2)} días.
         </h4>
         {renderedDeltaB > 0 ? (
           <h4 className="textDetail" id="angularSpeed">
-            Velocidad angular: {(renderedDeltaB / renderedT).toFixed(2)} grados por día.
+            Velocidad angular: {(renderedDeltaB / renderedT).toFixed(2)} grados/día.
           </h4>
         ) : null}
         <h4 className="textDetail">
-          Latitud de la mancha en la imagen #{refNum}: {latitudes[refNum - 1]?.toFixed(2)} grados.
+          Latitud de la mancha en la imagen #{refNum}: {latitudes[0]?.toFixed(2)} grados.
         </h4>
         <h4 className="textDetail">
-          Latitud de la mancha en la imagen #{refNum + 1}: {latitudes[refNum]?.toFixed(2)} grados.
+          Latitud de la mancha en la imagen #{refNum + 1}: {latitudes[1]?.toFixed(2)} grados.
         </h4>
       </div>
       <div className="refImageContainer">

@@ -189,7 +189,7 @@ const LandingPage = () => {
           afectan tanto a nuestro planeta como al entorno espacial más amplio.
         </p>
 
-        <img id="StatsImage" src="/public/statsImage.jpeg" alt="StatsImage" />
+        <img id="StatsImage" src="./statsImage.jpeg" alt="StatsImage" />
         <p id="imageStatDescription">
           Figura construida a partir de los datos de: Source: WDC-SILSO, Royal
           Observatory of Belgium, Brussels
