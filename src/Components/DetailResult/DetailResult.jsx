@@ -53,7 +53,7 @@ export const DetailResult = props => {
         }
       </div>
       <div className="refImageContainer">
-        <h4 className="textDetail"
+        <p className="resultTitle"
           // style={
           //   refNum == 1
           //     ? { color: `#FF595E` }
@@ -63,7 +63,7 @@ export const DetailResult = props => {
           // }
         >
           {refImageTitle}
-        </h4>
+        </p>
       </div>
     </div>
   );

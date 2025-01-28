@@ -52,7 +52,7 @@ export const AppResults = props => {
 
   return (
     <div>
-      <h1 id="resultTitle">Resultados</h1>
+      <h1 id="resultTitleSection">Resultados</h1>
       <div className="resultsContainer">
         <div id="firstResultCol">
           {/* Day Result Container */}
@@ -70,8 +70,8 @@ export const AppResults = props => {
           </div>
 
           {/* Coordenadas Container */}
-          <div id="coordsResumeContainer">
-            <div id="coordsResumeDetailsContainer">
+          <div className="resultContainer" id="coordContainer">
+            <div className="resultContent" id="coordContent">
               {positions && positions.map((pos, index) =>
                 <div className="coordItem" key={index + 1}>
                   <h4 style={{ color: getColor(index + 1) }}>
@@ -86,12 +86,12 @@ export const AppResults = props => {
                 </div>
               )}
             </div>
-            <div id="coordsResumeTitleContainer">Coordenadas</div>
+            <div className="resultTitle">Coordenadas</div>
           </div>
         </div>
 
         {/* Detailed Results */}
-        <div className="resultCol" id="colResult2">
+        <div id="secondResultCol">
           {[1, 2, 3].map(num =>
             <DetailResult
               key={num}
