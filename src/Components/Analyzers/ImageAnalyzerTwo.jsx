@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Analyzers/ImageAnalyzer'
-import errorBackground from './ErrorImagesForAnalyzers/NoEncontradaAmarilla.jpg'
+import errorBackground from './ErrorImagesForAnalyzers/NoencontradaAmarilla.jpg'
 
 export const ImageAnalyzerTwo = (props) => {
 

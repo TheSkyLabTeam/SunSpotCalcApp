@@ -1,90 +1,107 @@
-import React from 'react'
-import './Analyzers/ImageAnalyzer'
-import { DetailResult } from './DetailResult/DetailResult'
-import './Styles/AppResults.css'
+import React from "react";
+import "./Styles/AppResults.css";
+import { DetailResult } from "./DetailResult/DetailResult";
 
+export const AppResults = props => {
+  let T = [0, 0, 0];
 
-export const AppResults = (props) => {
-
-  let T = [0, 0, 0]
-
-  // Defining a function that emulates numpy diff
-
+  // Utility functions
   function diff(array) {
-    let delta = [Math.abs(array[1]-array[0]), Math.abs(array[2]-array[1]),Math.abs(array[3]-array[2])];
-    return delta;
+    return array.slice(1).map((val, i) => Math.abs(val - array[i]));
   }
-
-  // Defining a function that calculates that emulates mean
 
   function mean(arr) {
-    // check if the array is empty
-    if (arr.length === 0) {
-      return 0;
-    }
-  
-    // sum up all the elements in the array
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
-    }
-  
-    // divide the sum by the number of elements to get the average
-    return sum / arr.length;
+    return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
   }
 
-  // Defining a function for divide the elements of the arrays
   function divideArrays(array1, array2) {
-    if(array1.length !== array2.length) {
-      throw new Error("Both arrays must have the same length")
-    }
-    let result = [];
-    for (let i = 0; i < array1.length; i++) {
-      if(array2[i] === 0) throw new Error("Cannot divide by 0");
-      if(array1[i] === undefined || array2[i] === undefined) throw new Error("array element cannot be undefined")
-      result.push(array1[i] / array2[i]);
-    }
-    return result;
+    if (array1.length !== array2.length)
+      throw new Error("Arrays must match in length");
+    return array1.map((val, i) => {
+      if (array2[i] === 0) throw new Error("Cannot divide by zero");
+      return val / array2[i];
+    });
   }
-  
-  
-  
+
   let BCalc = props.bValues;
   let DAYS = props.days;
+  let positions = props.positions;
 
   let delta = diff(BCalc);
   let deltaDays = diff(DAYS);
 
-  let multipliedDAYS = (deltaDays.map(element => element * 360));
-  
-  if (multipliedDAYS.every(element => element !== 0) && delta.every(element => element !== 0)){
-    T = divideArrays(multipliedDAYS, delta)
+  let multipliedDAYS = deltaDays.map(element => element * 360);
+
+  if (multipliedDAYS.every(e => e !== 0) && delta.every(e => e !== 0)) {
+    T = divideArrays(multipliedDAYS, delta);
   }
-  
-  
+
+
+  const getColor = num => {
+    switch (num) {
+      case 1:
+        return "var(--color-red)";
+      case 2:
+        return "var(--color-yellow)";
+      case 3:
+        return "var(--color-green)";
+      default:
+        return "var(--color-blue)";
+    }
+  };
 
   return (
-    <>
-        <h1 id='resultTitle'>Resultados</h1>
-        <div className="resultsContainer">
-          <div className="resultCol" id='colResult1'>
-            <div className="dayResult" id='ContainerDayTitleResult'>
-              <h3 className="titleResult">Rotación promedio del sol</h3>
-            </div>
-            <div className="dayResult" id='ContainerDayDetailResult'>
-              <h1 id="dayIntResult">{parseInt(mean(T))}</h1>
-              <h4 id="dayFloatResult">{((- Math.trunc(mean(T)) + mean(T)).toFixed(2)).replace(0, '')}</h4>
+    <div>
+      <h1 id="resultTitle">Resultados</h1>
+      <div className="resultsContainer">
+        <div id="firstResultCol">
+          {/* Day Result Container */}
+          <div className="resultContainer">
+            <div className="resultContent">
+              <h1 id="dayIntResult">
+                {parseInt(mean(T))}
+              </h1>
+              <h4 id="dayFloatResult">
+                {(-Math.trunc(mean(T)) + mean(T)).toFixed(2).replace(0, "")}
+              </h4>
               <h4 id="textDays">Días</h4>
             </div>
-          </div>
-          <div className="resultCol" id='colResult2'>
-            <DetailResult num="1" delta={delta} T={T} />
-            <DetailResult num="2" delta={delta} T={T} />
-            <DetailResult num="3" delta={delta} T={T} />
+            <div className="resultTitle">Rotación promedio del sol</div>
           </div>
 
+          {/* Coordenadas Container */}
+          <div id="coordsResumeContainer">
+            <div id="coordsResumeDetailsContainer">
+              {positions && positions.map((pos, index) =>
+                <div className="coordItem" key={index + 1}>
+                  <h4 style={{ color: getColor(index + 1) }}>
+                    Coordenada {index + 1}
+                  </h4>
+                  <p>
+                    Valor X: {pos.posX.toFixed(2)}
+                  </p>
+                  <p>
+                    Valor Y: {pos.posY.toFixed(2)}
+                  </p>
+                </div>
+              )}
+            </div>
+            <div id="coordsResumeTitleContainer">Coordenadas</div>
+          </div>
         </div>
-    </>
-  )
-}
-9
+
+        {/* Detailed Results */}
+        <div className="resultCol" id="colResult2">
+          {[1, 2, 3].map(num =>
+            <DetailResult
+              key={num}
+              num={num}
+              delta={delta}
+              T={T}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
