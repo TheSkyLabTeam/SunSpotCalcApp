@@ -79,10 +79,10 @@ export const AppResults = props => {
                     Coordenada {index + 1}
                   </h4>
                   <p>
-                    Valor X: {pos.posX.toFixed(2)}
+                    Coord X: {pos.posX.toFixed(2)}
                   </p>
                   <p>
-                    Valor Y: {pos.posY.toFixed(2)}
+                    Coord Y: {pos.posY.toFixed(2)}
                   </p>
                 </div>
               )}

@@ -10,14 +10,11 @@
     --color-yellow: #FFCA3A;
     --color-green: #8AC926;
     --color-blue: #1982C4;
-  
-  }
+}
 
 #dateSelectorContainer {
     width: 100%;
     height: 20vh;
-    
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,19 +32,18 @@
     align-items: center;
     width: 3.8em;
     height: 3.8em;
-
     border: 1px solid var(--brightest-color);
     border-radius: 5px;
     background-color: var(--darkest-color);
     color: var(--brightest-color);
     margin: 5px;
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
+    cursor: pointer;
 }
 
 .buttonFromDate:hover {
     background-color: var(--color-yellow);
     color: var(--darkest-color);
-    transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 200ms;
 }
 
 #refreshButton:hover {
@@ -55,13 +51,40 @@
     color: var(--brightest-color);
 }
 
-/* Styles for the inputs +*/
+/* Desktop date input styles */
+.desktop-date-input {
+    display: block;
+}
 
+/* Mobile date button styles */
+.mobile-date-button {
+    display: none;
+    background-color: var(--darkest-color);
+    padding: 12px;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: var(--brightest-color);
+    transition: all 300ms;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-date-button:hover {
+    background-color: var(--color-red);
+}
+
+.mobile-date-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Regular date input styles */
 input[type="date"] {
     background-color: var(--darkest-color);
     padding: 12px;
     font-weight: bold;
-
     border: 1px solid white;
     border-radius: 5px;
     outline: none;
@@ -72,43 +95,70 @@ input[type="date"] {
 
 input[type="date"]:hover {
     background-color: var(--color-red);
-    padding: 12px;
-    font-weight: bold;
-
-    border: 1px solid white;
-    border-radius: 5px;
-    outline: none;
-    color: var(--brightest-color);
-    transition: all 300ms;
 }
 
-::-webkit-calendar-picker-indicator{
+::-webkit-calendar-picker-indicator {
     background-color: #ffffff;
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
 }
 
-/* Just decoration Stuff */
+/* Mobile date button styles */
+.mobile-date-container {
+    display: none; /* Se mostrará en mobile */
+    position: relative;
+}
 
+.mobile-date-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkest-color);
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: var(--brightest-color);
+    transition: all 300ms;
+    cursor: pointer;
+    width: 3.8em;
+    height: 3.8em;
+}
+
+.mobile-date-button:hover {
+    background-color: var(--color-red);
+}
+
+.hidden-date-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none; /* Solo se activará a través del botón */
+}
+
+/* Media queries */
 @media (max-width: 1000px) {
     #dateTitle {
-        color: var(--brightest-color);
         font-size: 3.5vw;
         margin-right: 2vw;
     }
 }
 
-
 @media (max-width: 600px) {
-    #dateSelector {
-        width: 6vw;
+    #dateSelectorContainer {
+        height: auto;
+        padding: 20px 10px;
+        flex-wrap: wrap;
     }
 
-    #dateTitle {
-        color: var(--brightest-color);
-        margin-right: 3.5vw;
+    .desktop-date-input {
+        display: none;
     }
 
+    .mobile-date-container {
+        display: block;
+    }
 }
-

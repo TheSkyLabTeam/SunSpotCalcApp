@@ -47,6 +47,11 @@
     margin-bottom: 0.5em;
 }
 
+.stronger {
+    font-weight: 500;
+    color: var(--brightest-color);
+}
+
 @media (max-width: 1000px) {
     #DetailResult {
         width: 100%;

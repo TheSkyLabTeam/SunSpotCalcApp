@@ -39,32 +39,32 @@ export const NewAnalyzer = ({ sendPosition, sendL0, ...props }) => {
   // Update image size based on screen width
   useEffect(() => {
     const handleResize = () => {
-      let newSize;
-      if (window.innerWidth <= 640) {
+      const screenWidth = window.innerWidth;
+      let newSize, newR, newCoorParameter;
+
+      if (screenWidth <= 640) {
         newSize = 300;
-      } else if (window.innerWidth <= 768) {
-        newSize = Math.min(512, window.innerWidth - 40);
+        newR = 129.5;
+        newCoorParameter = 150;
+      } else if (screenWidth <= 768) {
+        newSize = Math.min(512, screenWidth - 40);
+        newR = 221;
+        newCoorParameter = 256;
       } else {
         newSize = 512;
+        newR = 221;
+        newCoorParameter = 256;
       }
+
       setImageSize(newSize);
+      setR(newR);
+      setCoorParameter(newCoorParameter);
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize();
+    handleResize(); // Initial call
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // Update coordinates parameters based on image size
-  useEffect(() => {
-    if (imageSize <= 300) {
-      setR(129.5);
-      setCoorParameter(150);
-    } else {
-      setR(221);
-      setCoorParameter(256);
-    }
-  }, [imageSize]);
 
   const ref = useRef(null);
 
@@ -73,24 +73,16 @@ export const NewAnalyzer = ({ sendPosition, sendL0, ...props }) => {
     if (posX !== 0 || posY !== 0) {
       sendPosition?.({ posX, posY });
     }
-  }, [posX, posY]); // Eliminamos sendPosition de las dependencias
+  }, [posX, posY]);
 
   // Handle click coordinates
   useEffect(() => {
     const getcordd = (e) => {
       e.preventDefault();
-
-      const rect = e.target.getBoundingClientRect();
-      const scale = imageSize / rect.width; // Calculate scale factor
-
-      // Calculate coordinates relative to image center
-      const rawX = e.clientX - rect.left;
-      const rawY = e.clientY - rect.top;
-
-      // Convert to centered coordinates and apply scaling
-      const posX = (rawX - rect.width / 2) * scale;
-      const posY = (rect.height / 2 - rawY) * scale;
-
+      const bnds = e.target.getBoundingClientRect();
+      const posX = e.clientX - bnds.left - coorParameter;
+      const posY = bnds.top - e.clientY + coorParameter;
+      
       setposX(posX);
       setposY(posY);
     };
@@ -98,7 +90,7 @@ export const NewAnalyzer = ({ sendPosition, sendL0, ...props }) => {
     const element = ref.current;
     element.addEventListener("click", getcordd);
     return () => element.removeEventListener("click", getcordd);
-  }, []); // Eliminamos imageSize de las dependencias
+  }, [coorParameter]);
 
   // Reset coordinates when refresh is triggered
   useEffect(() => {
@@ -195,10 +187,6 @@ export const NewAnalyzer = ({ sendPosition, sendL0, ...props }) => {
   }
   const L0 = (eina - sita - 100) % 360;
 
-  useEffect(() => {
-    sendL0?.(L0);
-  }, [L0]);
-
   // Sunspot calculations
   const Pm = 180 - Math.degrees(Math.atan2(posX, posY));
   const Rm = Math.sqrt(posX ** 2 + posY ** 2);
@@ -225,6 +213,9 @@ export const NewAnalyzer = ({ sendPosition, sendL0, ...props }) => {
     L0 +
     Math.degrees(Math.asin(Math.sin(Math.radians(P - Pm)) * Math.sin(rho2) * Math.cos(Math.radians(B2))));
 
+    useEffect(() => {
+      sendL0?.(((l * 90)/Math.PI) * 2);
+    }, [l]);
   return (
     <div id="analyzerPrincipalContainer">
       <h1 id="numIndicator">

@@ -21,6 +21,8 @@
   width: 100%;
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #SunHeaderImageContainer {
@@ -278,6 +280,8 @@ p {
     max-width: 1920px;
     height: 100vh;
     display: flex;
+    justify-content: start;
+    align-items: start;
   }
 
   #SunHeaderImageContainer {
@@ -441,6 +445,27 @@ p {
 
 /* Large Desktop Styles */
 @media (min-width: 1200px) {
+
+  #header {
+    background-color: var(--darkest-color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+  }
+  
+  #SunHeaderImageContainer {
+    background-image: url(./Imgs/NASA_SunPhoto.png);
+    opacity: 1;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 50%;
+  }
+
   #sunspotSection,
   #statsSection,
   #instructionSection {
